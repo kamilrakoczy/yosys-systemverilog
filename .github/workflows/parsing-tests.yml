@@ -135,6 +135,7 @@ jobs:
           sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
       - name: Checkout branch
+        if: ${{ github.event_name == 'pull_request' }}
         run: |
           git checkout --progress --force -B ${{ github.head_ref }} ${{ github.event.pull_request.head.sha }}
 
@@ -157,13 +158,7 @@ jobs:
       - name: Update logs
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          git config --global user.email "action@example.com" &&
-          git config --global user.name "github action"
-          if [ -n "$(git status logs/ --porcelain)" ]; then
-            git add logs/
-            git commit -m "Update logs" &&
-            git push --set-upstream origin ${{ github.head_ref }}
-          fi
+          .github/scripts/ci_github_update.sh "logs/" "Update CI results" "${{ github.head_ref }}"
 
       - name: Rename test results
         if: ${{ always() }}
