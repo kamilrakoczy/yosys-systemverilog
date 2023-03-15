@@ -63,6 +63,13 @@ jobs:
           git fetch github/antmicro ${{github.event.inputs.plugins_branch}}
           git checkout FETCH_HEAD
 
+      - name: Setup cache
+        uses: actions/cache@v2
+        with:
+          path: "/home/runner/work/yosys-systemverilog/yosys-systemverilog/.cache/"
+          key: cache_${{ steps.cache_timestamp.outputs.time }}
+          restore-keys: cache_
+
       - name: Build binaries
         run: |
           # Github dropped support for unauthorized git: https://github.blog/2021-09-01-improving-git-protocol-security-github/
