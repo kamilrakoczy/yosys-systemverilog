@@ -1155,7 +1155,7 @@ Dumping AST before simplification:
     AST_MODULE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:1.1-9.10> str='\top'
       AST_TYPEDEF <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:2.12-2.18> str='\struct_t'
         AST_STRUCT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:2.12-2.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:3.19-3.20> str='x' logic basic_prep range=[2:0]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:3.19-3.20> str='x' logic basic_prep range=[0:0]
       AST_WIRE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:1.31-1.32> str='\o' output logic port=1 multirange=[ 0 3 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
@@ -1169,13 +1169,13 @@ Dumping AST before simplification:
         AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:1.25-1.30> basic_prep range=[2:0]
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_WIRE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:6.24-6.25> str='\a' logic basic_prep range=[2:0] multirange=[ 0 3 0 2 0 3 ] multirange_swapped=[ 0 0 0 ]
+      AST_WIRE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:6.24-6.25> str='\a' logic basic_prep range=[0:0] multirange=[ 0 1 0 2 0 3 ] multirange_swapped=[ 0 0 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> str='\struct_t' bits='010111000111001101110100011100100111010101100011011101000101111101110100'(72) basic_prep range=[71:0] int=1668570996
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
             AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:6.13-6.18> basic_prep range=[1:0]
               AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
@@ -1187,8 +1187,8 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
         ATTR \is_simplified_wire:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-        AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> range=[17:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000010001'(32) signed range=[31:0] int=17
+        AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> range=[5:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000101'(32) signed range=[31:0] int=5
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:7.11-7.27>
         AST_IDENTIFIER <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:7.11-7.12> str='\a' basic_prep
@@ -1198,14 +1198,14 @@ Dumping AST before simplification:
                 AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
                 AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed range=[31:0] int=2
               AST_MUL <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
-                AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed range=[31:0] int=3
+                AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
                 AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
             AST_ADD <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
               AST_ADD <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
                 AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
                 AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed range=[31:0] int=2
               AST_MUL <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
-                AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed range=[31:0] int=3
+                AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
                 AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
         AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
       AST_ASSIGN <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:8.11-8.24>
@@ -1213,14 +1213,14 @@ Dumping AST before simplification:
         AST_IDENTIFIER <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:8.15-8.24> str='\a' basic_prep
           AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
             AST_ADD <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
-              AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed range=[31:0] int=2
+              AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
               AST_MUL <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
-                AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed range=[31:0] int=3
+                AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
                 AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
             AST_ADD <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
               AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
               AST_MUL <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0>
-                AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed range=[31:0] int=3
+                AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
                 AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
@@ -1233,17 +1233,17 @@ Dumping Verilog AST before simplification:
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
       (* is_simplified_wire = 1 *)
-      wire [17:0] a;
+      wire [5:0] a;
       /** AST_TYPEDEF **/
-      assign a[((0)+(2))+((3)*(0)):((0)+(2))+((3)*(0))] = 1;
-      assign o = a[(2)+((3)*(0)):(0)+((3)*(0))];
+      assign a[((0)+(2))+((1)*(0)):((0)+(2))+((1)*(0))] = 1;
+      assign o = a[(0)+((1)*(0)):(0)+((1)*(0))];
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
     AST_MODULE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:1.1-9.10> str='\top' basic_prep
       AST_TYPEDEF <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:2.12-2.18> str='\struct_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:2.12-2.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:3.19-3.20> str='x' logic basic_prep range=[2:0]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:3.19-3.20> str='x' logic basic_prep range=[0:0]
       AST_WIRE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:1.31-1.32> str='\o' output logic basic_prep port=1 range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -1257,13 +1257,13 @@ Dumping AST after simplification:
         AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:1.25-1.30> basic_prep range=[2:0]
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_WIRE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:6.24-6.25> str='\a' logic basic_prep range=[17:0] multirange=[ 0 3 0 2 0 3 ] multirange_swapped=[ 0 0 0 ]
+      AST_WIRE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:6.24-6.25> str='\a' logic basic_prep range=[5:0] multirange=[ 0 1 0 2 0 3 ] multirange_swapped=[ 0 0 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> str='\struct_t' bits='010111000111001101110100011100100111010101100011011101000101111101110100'(72) basic_prep range=[71:0] int=1668570996
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
             AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:6.13-6.18> basic_prep range=[1:0]
               AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
@@ -1275,8 +1275,8 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
         ATTR \is_simplified_wire:
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
-        AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> basic_prep range=[17:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000010001'(32) signed basic_prep range=[31:0] int=17
+        AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> basic_prep range=[5:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000101'(32) signed basic_prep range=[31:0] int=5
           AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:7.11-7.27> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:7.11-7.12> str='\a' basic_prep
@@ -1287,8 +1287,8 @@ Dumping AST after simplification:
       AST_ASSIGN <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:8.11-8.24> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:8.11-8.12> str='\o' basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:8.15-8.24> str='\a' basic_prep
-          AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> basic_prep range=[2:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+          AST_RANGE <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> basic_prep range=[0:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
@@ -1301,10 +1301,10 @@ Dumping Verilog AST after simplification:
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
       (* is_simplified_wire = 1 *)
-      wire [17:0] a;
+      wire [5:0] a;
       /** AST_TYPEDEF **/
       assign a[2:2] = 1;
-      assign o = a[2:0];
+      assign o = a[0:0];
     endmodule
 --- END OF AST DUMP ---
 
@@ -1360,9 +1360,8 @@ Finding unused cells or wires in module \top..
 
 2.5. Executing CHECK pass (checking for obvious problems).
 Checking module top...
-Warning: Wire top.\o [1] is used but has no driver.
 Warning: Wire top.\o [0] is used but has no driver.
-Found and reported 2 problems.
+Found and reported 1 problems.
 
 2.6. Executing OPT pass (performing simple optimizations).
 
@@ -1421,9 +1420,9 @@ Finding unused cells or wires in module \top..
 === top ===
 
    Number of wires:                  2
-   Number of wire bits:             21
+   Number of wire bits:              9
    Number of public wires:           2
-   Number of public wire bits:      21
+   Number of public wire bits:       9
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -1431,9 +1430,8 @@ Finding unused cells or wires in module \top..
 
 2.12. Executing CHECK pass (checking for obvious problems).
 Checking module top...
-Warning: Wire top.\o [1] is used but has no driver.
 Warning: Wire top.\o [0] is used but has no driver.
-Found and reported 2 problems.
+Found and reported 1 problems.
 
 3. Executing Verilog backend.
 
@@ -1450,17 +1448,17 @@ module top(o);
   (* packed_ranges = 1'h1 *)
   (* src = "UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:6.24-6.25" *)
   (* unpacked_ranges = 1'h1 *)
-  (* unused_bits = "3 4 5 6 7 8 9 10 11 12 13 14 15 16 17" *)
+  (* unused_bits = "1 3 4 5" *)
   (* wiretype = "\\struct_t" *)
-  wire [17:0] a;
+  wire [5:0] a;
   (* is_simplified_wire = 32'd1 *)
   (* packed_ranges = 1'h1 *)
   (* src = "UHDM-integration-tests/tests/SelectOnMemberSelectedFrom2DArray/top.sv:1.31-1.32" *)
   (* unpacked_ranges = 1'h1 *)
   output [2:0] o;
   wire [2:0] o;
-  assign a[2:0] = { 1'h1, o[1:0] };
-  assign o[2] = 1'h1;
+  assign { a[2], a[0] } = { 1'h1, o[0] };
+  assign o[2:1] = 2'h0;
 endmodule
 
 4. Executing Verilog backend.
@@ -1513,7 +1511,7 @@ Simulating cycle 38.
 Simulating cycle 39.
 Simulating cycle 40.
 
-Warnings: 2 unique messages, 4 total
+Warnings: 1 unique messages, 2 total
 
 Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 

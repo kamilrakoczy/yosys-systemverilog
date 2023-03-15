@@ -1047,6 +1047,12 @@ Dumping AST before simplification:
           AST_RANGE <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:2.18-2.24> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+          AST_RANGE <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:2.18-2.24> basic_prep range=[31:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
+            AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+          AST_RANGE <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:2.18-2.24> basic_prep range=[31:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
+            AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:1.32-1.33> str='\o' output logic port=1 multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
@@ -1140,6 +1146,12 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
           ATTR \is_simplified_wire:
             AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+          AST_RANGE <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:2.18-2.24> basic_prep range=[31:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
+            AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+          AST_RANGE <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:2.18-2.24> basic_prep range=[31:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
+            AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_RANGE <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:2.18-2.24> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/AssignTypedefedFunctionCall/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]

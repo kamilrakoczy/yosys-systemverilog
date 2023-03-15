@@ -1259,9 +1259,9 @@ Object 'work@top' of type 'design'
       Object '' of type 'int_typespec'
     Object 'o' of type 'int_var'
 Warning: Removing unused module: \otp_ctrl_ecc_reg from the design.
-Generating RTLIL representation for module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001'.
+Generating RTLIL representation for module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111'.
 Dumping AST before simplification:
-    AST_MODULE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:1.1-5.29> str='$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001'
+    AST_MODULE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:1.1-5.29> str='$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111'
       AST_PARAMETER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:2.19-2.28> str='\Depth' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -1270,7 +1270,7 @@ Dumping AST before simplification:
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:16.15-16.30> bits='00000000000000000000000000001111'(32) signed basic_prep range=[31:0] int=15
         AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1282,7 +1282,7 @@ Dumping AST before simplification:
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:3.24-3.37> bits='00000000000000000000000000000000'(32) basic_prep range=[31:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:3.24-3.37> bits='00000000000000000000000000000100'(32) basic_prep range=[31:0] int=4
         AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1297,7 +1297,7 @@ Dumping AST before simplification:
         AST_IDENTIFIER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:4.15-4.17> str='\Aw'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
-    module \$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001 (a);
+    module \$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111 (a);
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
       /** AST_PARAMETER **/
@@ -1310,7 +1310,7 @@ Dumping Verilog AST before simplification:
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
-    AST_MODULE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:1.1-5.29> str='$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001' basic_prep
+    AST_MODULE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:1.1-5.29> str='$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111' basic_prep
       AST_PARAMETER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:2.19-2.28> str='\Depth' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -1319,7 +1319,7 @@ Dumping AST after simplification:
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) basic_prep range=[31:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:16.15-16.30> bits='00000000000000000000000000001111'(32) basic_prep range=[31:0] int=15
         AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1331,7 +1331,7 @@ Dumping AST after simplification:
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:3.24-3.37> bits='00000000000000000000000000000000'(32) basic_prep range=[31:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:3.24-3.37> bits='00000000000000000000000000000100'(32) basic_prep range=[31:0] int=4
         AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1343,10 +1343,10 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:4.11-4.17> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:4.11-4.12> str='\a' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:4.15-4.17> bits='00000000000000000000000000000000'(32) basic_prep range=[31:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:4.15-4.17> bits='00000000000000000000000000000100'(32) basic_prep range=[31:0] int=4
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
-    module \$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001 (a);
+    module \$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111 (a);
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
       /** AST_PARAMETER **/
@@ -1355,7 +1355,7 @@ Dumping Verilog AST after simplification:
       /** AST_LOCALPARAM **/
       (* is_simplified_wire = 1 *)
       output signed [31:0] a;
-      assign a = 0;
+      assign a = 4;
     endmodule
 --- END OF AST DUMP ---
 Generating RTLIL representation for module `\top'.
@@ -1363,21 +1363,21 @@ Dumping AST before simplification:
     AST_MODULE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:7.1-19.16> str='\top'
       AST_TYPEDEF <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:8.12-8.18> str='\part_info_t'
         AST_STRUCT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:8.12-8.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:9.11-9.12> str='x' signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:12.26-12.49> str='\Info' logic basic_prep range=[31:0] multirange=[ 0 32 0 1 ] multirange_swapped=[ 0 0 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:9.11-9.12> str='x' signed basic_prep range=[0:0]
+      AST_PARAMETER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:12.26-12.49> str='\Info' logic basic_prep range=[0:0] multirange=[ 0 1 0 32 ] multirange_swapped=[ 0 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> str='\part_info_t' bits='010111000111000001100001011100100111010001011111011010010110111001100110011011110101111101110100'(96) basic_prep range=[95:0] int=1718574964
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
-              AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
             AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[0:0]
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+            AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
+              AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000001111'(32) basic_prep range=[31:0] int=15
+        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
@@ -1391,7 +1391,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
         AST_IDENTIFIER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:13.37-13.43> str='\Info' basic_prep
           AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0>
-            AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed range=[31:0] int=31
+            AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
         AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
@@ -1403,7 +1403,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_CELL <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:15.4-18.14> str='\u_otp_ctrl_ecc_reg'
-        AST_CELLTYPE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> str='$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001'
+        AST_CELLTYPE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> str='$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111'
         AST_ARGUMENT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:15.4-18.14> str='\a'
           AST_IDENTIFIER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:18.10-18.11> str='\o'
 --- END OF AST DUMP ---
@@ -1426,21 +1426,21 @@ Dumping AST after simplification:
     AST_MODULE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:7.1-19.16> str='\top' basic_prep
       AST_TYPEDEF <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:8.12-8.18> str='\part_info_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:8.12-8.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:9.11-9.12> str='x' signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:12.26-12.49> str='\Info' logic basic_prep range=[31:0] multirange=[ 0 32 0 1 ] multirange_swapped=[ 0 0 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:9.11-9.12> str='x' signed basic_prep range=[0:0]
+      AST_PARAMETER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:12.26-12.49> str='\Info' logic basic_prep range=[31:0] multirange=[ 0 1 0 32 ] multirange_swapped=[ 0 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> str='\part_info_t' bits='010111000111000001100001011100100111010001011111011010010110111001100110011011110101111101110100'(96) basic_prep range=[95:0] int=1718574964
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
-              AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
             AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[0:0]
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+            AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
+              AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000001111'(32) basic_prep range=[31:0] int=15
+        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) basic_prep range=[31:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1452,7 +1452,7 @@ Dumping AST after simplification:
               AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:13.37-13.43> bits='00000000000000000000000000001111'(32) basic_prep range=[31:0] int=15
+        AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) basic_prep range=[31:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1463,7 +1463,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_CELL <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:15.4-18.14> str='\u_otp_ctrl_ecc_reg' basic_prep
-        AST_CELLTYPE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> str='$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001' basic_prep
+        AST_CELLTYPE <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:0.0-0.0> str='$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111' basic_prep
         AST_ARGUMENT <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:15.4-18.14> str='\a' basic_prep
           AST_IDENTIFIER <UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:18.10-18.11> str='\o' basic_prep
 --- END OF AST DUMP ---
@@ -1489,11 +1489,11 @@ Dumping Verilog AST after simplification:
 
 2.1.1. Analyzing design hierarchy..
 Top module:  \top
-Used module:     $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001
+Used module:     $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111
 
 2.1.2. Analyzing design hierarchy..
 Top module:  \top
-Used module:     $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001
+Used module:     $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111
 Removed 0 unused modules.
 
 2.2. Executing PROC pass (convert processes to netlists).
@@ -1528,34 +1528,34 @@ Cleaned up 0 empty switches.
 
 2.2.12. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
-Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001.
+Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111.
 
 2.3. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
-Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001.
+Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111.
 
 2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Finding unused cells or wires in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001..
+Finding unused cells or wires in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111..
 
 2.5. Executing CHECK pass (checking for obvious problems).
-Checking module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001...
+Checking module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111...
 Checking module top...
 Found and reported 0 problems.
 
 2.6. Executing OPT pass (performing simple optimizations).
 
 2.6.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001.
+Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111.
 Optimizing module top.
 
 2.6.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001'.
+Finding identical cells in module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111'.
 Finding identical cells in module `\top'.
 Removed a total of 0 cells.
 
 2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001..
+Running muxtree optimizer on module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Running muxtree optimizer on module \top..
@@ -1564,21 +1564,21 @@ Running muxtree optimizer on module \top..
 Removed 0 multiplexer ports.
 
 2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001.
+  Optimizing cells in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111.
   Optimizing cells in module \top.
 Performed a total of 0 changes.
 
 2.6.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001'.
+Finding identical cells in module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111'.
 Finding identical cells in module `\top'.
 Removed a total of 0 cells.
 
 2.6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001..
+Finding unused cells or wires in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111..
 Finding unused cells or wires in module \top..
 
 2.6.7. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001.
+Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111.
 Optimizing module top.
 
 2.6.8. Finished OPT passes. (There is nothing left to do.)
@@ -1586,7 +1586,7 @@ Optimizing module top.
 2.7. Executing WREDUCE pass (reducing word size of cells).
 
 2.8. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001..
+Finding unused cells or wires in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111..
 Finding unused cells or wires in module \top..
 
 2.9. Executing MEMORY_COLLECT pass (generating $mem cells).
@@ -1594,23 +1594,23 @@ Finding unused cells or wires in module \top..
 2.10. Executing OPT pass (performing simple optimizations).
 
 2.10.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001.
+Optimizing module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111.
 Optimizing module top.
 
 2.10.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001'.
+Finding identical cells in module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111'.
 Finding identical cells in module `\top'.
 Removed a total of 0 cells.
 
 2.10.3. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001..
+Finding unused cells or wires in module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111..
 Finding unused cells or wires in module \top..
 
 2.10.4. Finished fast OPT passes.
 
 2.11. Printing statistics.
 
-=== $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001 ===
+=== $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111 ===
 
    Number of wires:                  1
    Number of wire bits:             32
@@ -1631,12 +1631,12 @@ Finding unused cells or wires in module \top..
    Number of memory bits:            0
    Number of processes:              0
    Number of cells:                  1
-     $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001      1
+     $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111      1
 
 === design hierarchy ===
 
    top                               1
-     $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001      1
+     $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111      1
 
    Number of wires:                  2
    Number of wire bits:             64
@@ -1648,7 +1648,7 @@ Finding unused cells or wires in module \top..
    Number of cells:                  0
 
 2.12. Executing CHECK pass (checking for obvious problems).
-Checking module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001...
+Checking module $paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111...
 Checking module top...
 Found and reported 0 problems.
 
@@ -1658,15 +1658,15 @@ Found and reported 0 problems.
 
 3.2. Executing DEMUXMAP pass.
 /* Generated by Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os) */
-Dumping module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001'.
+Dumping module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111'.
 
 (* src = "UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:1.1-5.29" *)
-module \$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001 (a);
+module \$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111 (a);
   (* is_simplified_wire = 32'd1 *)
   (* src = "UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:1.36-1.37" *)
   output [31:0] a;
   wire [31:0] a;
-  assign a = 32'd0;
+  assign a = 32'd4;
 endmodule
 Dumping module `\top'.
 
@@ -1679,7 +1679,7 @@ module top(o);
   wire [31:0] o;
   (* module_not_derived = 32'd1 *)
   (* src = "UHDM-integration-tests/tests/ClogOfParamOfInstanceInitializedByStructMember/top.sv:15.4-18.14" *)
-  \$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001  u_otp_ctrl_ecc_reg (
+  \$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111  u_otp_ctrl_ecc_reg (
     .a(o)
   );
 endmodule
@@ -1689,7 +1689,7 @@ endmodule
 4.1. Executing BMUXMAP pass.
 
 4.2. Executing DEMUXMAP pass.
-Dumping module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000000001'.
+Dumping module `$paramod\otp_ctrl_ecc_reg\Depth=32'00000000000000000000000000001111'.
 Dumping module `\top'.
 
 5. Executing SIM pass (simulate the circuit).
