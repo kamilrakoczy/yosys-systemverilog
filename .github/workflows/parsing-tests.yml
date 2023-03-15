@@ -161,28 +161,3 @@ jobs:
           path: |
             **/plot_*.svg
 
-            #  generate-tests-summary:
-            #    name: Summary Generation
-            #    runs-on: [self-hosted, Linux, X64]
-            #    container: ubuntu:jammy
-            #    if: ${{ !cancelled() }}
-            #    needs:
-            #      - tests-read-uhdm
-            #      - tests-read-systemverilog
-            #
-            #    steps:
-            #      - uses: actions/checkout@v3
-            #        with:
-            #          fetch-depth: 1
-            #
-            #      - name: Set up common Ubuntu configuration
-            #        run: ./.github/scripts/set-up-common-ubuntu-configuration.sh
-            #
-            #      - name: Download test results
-            #        uses: /actions/download-artifact@v3
-            #        with:
-            #          name: test-results
-            #
-            #      - name: Generate summary
-            #        run: |
-            #          ./.github/scripts/generate_summary.sh
