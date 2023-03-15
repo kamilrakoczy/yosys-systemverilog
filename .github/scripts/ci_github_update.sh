@@ -13,8 +13,8 @@ fi
 git config --global user.name "github-actions[bot]"
 git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-if [ -n "$(git status $1 --porcelain)" ]; then
-  git add $1
-  git commit -m $2
-  git push --set-upstream origin $3
+if [ -n "$(git status "$1" --porcelain)" ]; then
+  git add "$1"
+  git commit -m "$2"
+  git push --set-upstream origin "$3"
 fi
