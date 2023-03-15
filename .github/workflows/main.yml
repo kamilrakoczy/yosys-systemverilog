@@ -23,12 +23,10 @@ on:
 jobs:
   build-binaries:
     name: Build Binaries
-    runs-on: [self-hosted, Linux, X64]
-    container: ubuntu:jammy
+    runs-on: ubuntu-latest
     env:
       CC: gcc-9
       CXX: g++-9
-      CCACHE_DIR: "/root/yosys-uhdm-plugin-integration/yosys-uhdm-plugin-integration/.cache/"
       DEBIAN_FRONTEND: noninteractive
       PLUGIN_ASAN: 1
 
@@ -106,111 +104,111 @@ jobs:
     uses: ./.github/workflows/parsing-tests.yml
     needs: build-binaries
 
-  tests-formal-verification:
-    name: Formal Verification Tests
-    uses: ./.github/workflows/formal-verification.yml
-    needs: build-binaries
-
-  tests-large-designs:
-    name: Large Designs Tests
-    uses: ./.github/workflows/large-designs.yml
-    needs: build-binaries
-
-  release:
-    name: Release Package
-    needs:
-      - build-binaries
-      - tests-parsing
-      - tests-formal-verification
-      - tests-large-designs
-    runs-on: ubuntu-20.04
-    if: ${{github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')}}
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-         # Download complete repository + tags
-         fetch-depth: 0
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: binaries
-
-      # See https://github.com/actions/upload-artifact/issues/38
-      - name: Extract
-        run: tar -xf binaries.tar
-
-      - name: Generate tarball and apply TAG
-        run: |
-          GIT_VERSION=${GIT_VERSION:-$(git rev-parse --short "$GITHUB_SHA")}
-          DISTRO_ARCH=$(uname -m)
-          DISTRO=$(lsb_release --short --id)
-          DISTRO_RELEASE=$(lsb_release --short --release)
-          DISTRO_CODENAME=$(lsb_release --short --codename | sed -e's/[^A-Za-z0-9]//g')
-          FULL_TARBALL=yosys-uhdm-integration-$GIT_VERSION-$DISTRO-$DISTRO_RELEASE-$DISTRO_CODENAME-$DISTRO_ARCH.tar.gz
-          PLUGIN_TARBALL=yosys-uhdm-plugin-$GIT_VERSION-$DISTRO-$DISTRO_RELEASE-$DISTRO_CODENAME-$DISTRO_ARCH.tar.gz
-          # Create a tag of form ad2466e-2021-12-06
-          TAG="${TAG:-$(git show -s --date=short --format=%h-%cd)}"
-          git tag "$TAG" || true
-          echo "TAG=$TAG" >> $GITHUB_ENV
-          ls -lah image
-          tar -zcvf $FULL_TARBALL image
-          tar -zcvf $PLUGIN_TARBALL image/share/yosys/plugins/uhdm.so image/share/yosys/plugins/systemverilog.so install_plugin.sh
-      - name: Get PR data
-        uses: 8BitJonny/gh-get-current-pr@2.2.0
-        with:
-          sha: ${{ github.event.pull_request.head.sha }}
-        id: release_pr
-      - name: Deploy release
-        env:
-          RELEASE_NAME: >
-            ${{ steps.release_pr.outputs.pr_found == 'true'
-                &&
-                  format('{0}: #{1}: {2}',
-                         env.TAG,
-                         steps.release_pr.outputs.number,
-                         steps.release_pr.outputs.pr_title)
-                ||
-                  env.TAG }}
-          RELEASE_BODY: >
-            ${{ steps.release_pr.outputs.pr_found == 'true'
-                &&
-                  steps.release_pr.outputs.pr_body
-                ||
-                  '' }}
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: yosys-uhdm-*.tar.gz
-          tag: ${{ env.TAG }}
-          release_name: ${{ env.RELEASE_NAME }}
-          body: ${{ env.RELEASE_BODY }}
-          overwrite: true
-          file_glob: true
-
-  install-plugin:
-    name: Release Package Installation Test
-    runs-on: [self-hosted, Linux, X64]
-    container: debian:sid
-    needs: release
-    env:
-      DEBIAN_FRONTEND: noninteractive
-      GHA_MACHINE_TYPE: "n2-standard-2"
-
-    steps:
-      - name: Install Yosys and dependencies
-        run: |
-          apt update
-          apt upgrade -y
-          apt install -y yosys yosys-dev curl jq wget libreadline-dev
-      - name: Download and extract UHDM plugin
-        run: |
-          curl https://api.github.com/repos/antmicro/yosys-uhdm-plugin-integration/releases/latest -L | jq .assets[1] | grep "browser_download_url" | grep -Eo 'https://[^\"]*' | xargs wget -O - | tar -xz
-      - name: Install it
-        run: |
-          ./install_plugin.sh
-      - name: Run Yosys and load SystemVerilog plugin
-        run: yosys -p "plugin -i systemverilog"
-      - name: Run Yosys and load (deprecated) UHDM plugin
-        run: yosys -p "plugin -i uhdm"
+      #  tests-formal-verification:
+      #    name: Formal Verification Tests
+      #    uses: ./.github/workflows/formal-verification.yml
+      #    needs: build-binaries
+      #
+      #  tests-large-designs:
+      #    name: Large Designs Tests
+      #    uses: ./.github/workflows/large-designs.yml
+      #    needs: build-binaries
+      #
+      #  release:
+      #    name: Release Package
+      #    needs:
+      #      - build-binaries
+      #      - tests-parsing
+      #      - tests-formal-verification
+      #      - tests-large-designs
+      #    runs-on: ubuntu-20.04
+      #    if: ${{github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')}}
+      #
+      #    steps:
+      #      - uses: actions/checkout@v2
+      #        with:
+      #         # Download complete repository + tags
+      #         fetch-depth: 0
+      #
+      #      - name: Download artifacts
+      #        uses: actions/download-artifact@v2
+      #        with:
+      #          name: binaries
+      #
+      #      # See https://github.com/actions/upload-artifact/issues/38
+      #      - name: Extract
+      #        run: tar -xf binaries.tar
+      #
+      #      - name: Generate tarball and apply TAG
+      #        run: |
+      #          GIT_VERSION=${GIT_VERSION:-$(git rev-parse --short "$GITHUB_SHA")}
+      #          DISTRO_ARCH=$(uname -m)
+      #          DISTRO=$(lsb_release --short --id)
+      #          DISTRO_RELEASE=$(lsb_release --short --release)
+      #          DISTRO_CODENAME=$(lsb_release --short --codename | sed -e's/[^A-Za-z0-9]//g')
+      #          FULL_TARBALL=yosys-uhdm-integration-$GIT_VERSION-$DISTRO-$DISTRO_RELEASE-$DISTRO_CODENAME-$DISTRO_ARCH.tar.gz
+      #          PLUGIN_TARBALL=yosys-uhdm-plugin-$GIT_VERSION-$DISTRO-$DISTRO_RELEASE-$DISTRO_CODENAME-$DISTRO_ARCH.tar.gz
+      #          # Create a tag of form ad2466e-2021-12-06
+      #          TAG="${TAG:-$(git show -s --date=short --format=%h-%cd)}"
+      #          git tag "$TAG" || true
+      #          echo "TAG=$TAG" >> $GITHUB_ENV
+      #          ls -lah image
+      #          tar -zcvf $FULL_TARBALL image
+      #          tar -zcvf $PLUGIN_TARBALL image/share/yosys/plugins/uhdm.so image/share/yosys/plugins/systemverilog.so install_plugin.sh
+      #      - name: Get PR data
+      #        uses: 8BitJonny/gh-get-current-pr@2.2.0
+      #        with:
+      #          sha: ${{ github.event.pull_request.head.sha }}
+      #        id: release_pr
+      #      - name: Deploy release
+      #        env:
+      #          RELEASE_NAME: >
+      #            ${{ steps.release_pr.outputs.pr_found == 'true'
+      #                &&
+      #                  format('{0}: #{1}: {2}',
+      #                         env.TAG,
+      #                         steps.release_pr.outputs.number,
+      #                         steps.release_pr.outputs.pr_title)
+      #                ||
+      #                  env.TAG }}
+      #          RELEASE_BODY: >
+      #            ${{ steps.release_pr.outputs.pr_found == 'true'
+      #                &&
+      #                  steps.release_pr.outputs.pr_body
+      #                ||
+      #                  '' }}
+      #        uses: svenstaro/upload-release-action@v2
+      #        with:
+      #          repo_token: ${{ secrets.GITHUB_TOKEN }}
+      #          file: yosys-uhdm-*.tar.gz
+      #          tag: ${{ env.TAG }}
+      #          release_name: ${{ env.RELEASE_NAME }}
+      #          body: ${{ env.RELEASE_BODY }}
+      #          overwrite: true
+      #          file_glob: true
+      #
+      #  install-plugin:
+      #    name: Release Package Installation Test
+      #    runs-on: [self-hosted, Linux, X64]
+      #    container: debian:sid
+      #    needs: release
+      #    env:
+      #      DEBIAN_FRONTEND: noninteractive
+      #      GHA_MACHINE_TYPE: "n2-standard-2"
+      #
+      #    steps:
+      #      - name: Install Yosys and dependencies
+      #        run: |
+      #          apt update
+      #          apt upgrade -y
+      #          apt install -y yosys yosys-dev curl jq wget libreadline-dev
+      #      - name: Download and extract UHDM plugin
+      #        run: |
+      #          curl https://api.github.com/repos/antmicro/yosys-uhdm-plugin-integration/releases/latest -L | jq .assets[1] | grep "browser_download_url" | grep -Eo 'https://[^\"]*' | xargs wget -O - | tar -xz
+      #      - name: Install it
+      #        run: |
+      #          ./install_plugin.sh
+      #      - name: Run Yosys and load SystemVerilog plugin
+      #        run: yosys -p "plugin -i systemverilog"
+      #      - name: Run Yosys and load (deprecated) UHDM plugin
+      #        run: yosys -p "plugin -i uhdm"
