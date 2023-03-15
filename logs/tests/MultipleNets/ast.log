@@ -23,7 +23,7 @@ cd UHDM-integration-tests/build && UHDM-integration-tests/../image/bin/yosys -c 
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+ Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 
 [TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
 [TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
@@ -1783,18 +1783,18 @@ Dumping AST before simplification:
         AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_WIRE <UHDM-integration-tests/tests/MultipleNets/top.sv:18.27-18.43> str='\struct_net_input' input logic basic_prep range=[1:0] multirange=[ 0 2 ] multirange_swapped=[ 0 ]
+      AST_WIRE <UHDM-integration-tests/tests/MultipleNets/top.sv:18.27-18.43> str='\struct_net_input' input logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> str='\struct1' bits='0101110001110011011101000111001001110101011000110111010000110001'(64) basic_prep range=[63:0] int=1969452081
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[1:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+            AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-        AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[1:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/MultipleNets/top.sv:19.19-19.36> str='\integer_net_input' input signed port=8 range=[0:0]
         ATTR \is_simplified_wire:
@@ -1825,7 +1825,7 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/MultipleNets/top.sv:6.13-6.19> str='\custom::struct1' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/MultipleNets/top.sv:6.13-6.19> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/MultipleNets/top.sv:7.21-7.26> str='field' logic basic_prep range=[1:0]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/MultipleNets/top.sv:7.21-7.26> str='field' logic basic_prep range=[0:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(simple_logic_net, packed_logic_net, unpacked_logic_net, packed_array_logic_net, unpacked_array_logic_net, enum_net_output, struct_net_input, integer_net_input, time_net_input);
@@ -1857,7 +1857,7 @@ Dumping Verilog AST before simplification:
       (* wiretype = "\struct1" *)
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
-      input [1:0] struct_net_input;
+      input [0:0] struct_net_input;
       (* is_simplified_wire = 1 *)
       input signed [31:0] integer_net_input;
       (* is_simplified_wire = 1 *)
@@ -1949,18 +1949,18 @@ Dumping AST after simplification:
         AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_WIRE <UHDM-integration-tests/tests/MultipleNets/top.sv:18.27-18.43> str='\struct_net_input' input logic basic_prep range=[1:0] multirange=[ 0 2 ] multirange_swapped=[ 0 ]
+      AST_WIRE <UHDM-integration-tests/tests/MultipleNets/top.sv:18.27-18.43> str='\struct_net_input' input logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> str='\struct1' bits='0101110001110011011101000111001001110101011000110111010000110001'(64) basic_prep range=[63:0] int=1969452081
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[1:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+            AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[1:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/MultipleNets/top.sv:19.19-19.36> str='\integer_net_input' input signed basic_prep port=8 range=[31:0]
         ATTR \is_simplified_wire:
@@ -1991,7 +1991,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MultipleNets/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/MultipleNets/top.sv:6.13-6.19> str='\custom::struct1' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/MultipleNets/top.sv:6.13-6.19> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/MultipleNets/top.sv:7.21-7.26> str='field' logic basic_prep range=[1:0]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/MultipleNets/top.sv:7.21-7.26> str='field' logic basic_prep range=[0:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module top(simple_logic_net, packed_logic_net, unpacked_logic_net, packed_array_logic_net, unpacked_array_logic_net, enum_net_output, struct_net_input, integer_net_input, time_net_input);
@@ -2023,7 +2023,7 @@ Dumping Verilog AST after simplification:
       (* wiretype = "\struct1" *)
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
-      input [1:0] struct_net_input;
+      input [0:0] struct_net_input;
       (* is_simplified_wire = 1 *)
       input signed [31:0] integer_net_input;
       (* is_simplified_wire = 1 *)
@@ -2145,9 +2145,9 @@ Finding unused cells or wires in module \top..
 === top ===
 
    Number of wires:                  9
-   Number of wire bits:            161
+   Number of wire bits:            160
    Number of public wires:           9
-   Number of public wire bits:     161
+   Number of public wire bits:     160
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -2162,7 +2162,7 @@ Found and reported 0 problems.
 3.1. Executing BMUXMAP pass.
 
 3.2. Executing DEMUXMAP pass.
-/* Generated by Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os) */
+/* Generated by Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os) */
 Dumping module `\top'.
 
 (* top =  1  *)
@@ -2201,8 +2201,8 @@ module top(simple_logic_net, packed_logic_net, unpacked_logic_net, packed_array_
   (* src = "UHDM-integration-tests/tests/MultipleNets/top.sv:18.27-18.43" *)
   (* unpacked_ranges = 1'h1 *)
   (* wiretype = "\\struct1" *)
-  input [1:0] struct_net_input;
-  wire [1:0] struct_net_input;
+  input struct_net_input;
+  wire struct_net_input;
   (* is_simplified_wire = 32'd1 *)
   (* src = "UHDM-integration-tests/tests/MultipleNets/top.sv:20.16-20.30" *)
   input time_net_input;
@@ -2273,5 +2273,5 @@ Simulating cycle 40.
 
 Warnings: 1 unique messages, 2 total
 
-Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 

@@ -23,7 +23,7 @@ cd UHDM-integration-tests/build && UHDM-integration-tests/../image/bin/yosys -c 
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+ Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 
 [TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
 [TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
@@ -1502,18 +1502,18 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> str='\alias_t' bits='0101110001100001011011000110100101100001011100110101111101110100'(64) basic_prep range=[63:0] int=1634951028
         ATTR \is_simplified_wire:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
-      AST_WIRE <UHDM-integration-tests/tests/TypedefAlias/dut.v:21.19-21.20> str='\c' logic basic_prep range=[7:0] multirange=[ 0 8 ] multirange_swapped=[ 0 ]
+      AST_WIRE <UHDM-integration-tests/tests/TypedefAlias/dut.v:21.19-21.20> str='\c' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> str='\struct_t' bits='010111000111001101110100011100100111010101100011011101000101111101110100'(72) basic_prep range=[71:0] int=1668570996
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='1'(1) range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> basic_prep range=[7:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
+            AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='1'(1) range=[0:0] int=1
-        AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> basic_prep range=[7:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
+        AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/TypedefAlias/dut.v:22.23-22.24> str='\d' logic basic_prep range=[7:0] multirange=[ 0 8 0 8 ] multirange_swapped=[ 0 0 ]
         ATTR \wiretype:
@@ -1592,7 +1592,7 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/TypedefAlias/dut.v:10.11-10.17> str='\pkg::struct_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/TypedefAlias/dut.v:10.11-10.17> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/TypedefAlias/dut.v:11.17-11.18> str='x' logic basic_prep range=[7:0]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/TypedefAlias/dut.v:11.17-11.18> str='x' logic basic_prep range=[0:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/TypedefAlias/dut.v:14.11-14.22> str='\pkg::third_alias_t' basic_prep
         AST_WIRE <UHDM-integration-tests/tests/TypedefAlias/dut.v:14.11-14.22> logic basic_prep range=[7:0]
           ATTR \packed_ranges:
@@ -1604,6 +1604,9 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
           ATTR \is_simplified_wire:
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+          AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:14.17-14.22> basic_prep range=[7:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
+            AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:14.17-14.22> basic_prep range=[7:0]
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1626,7 +1629,7 @@ Dumping Verilog AST before simplification:
       (* wiretype = "\struct_t" *)
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
-      wire [7:0] c;
+      wire [0:0] c;
       (* wiretype = "\third_alias_t" *)
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
@@ -1680,18 +1683,18 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> str='\alias_t' bits='0101110001100001011011000110100101100001011100110101111101110100'(64) basic_prep range=[63:0] int=1634951028
         ATTR \is_simplified_wire:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
-      AST_WIRE <UHDM-integration-tests/tests/TypedefAlias/dut.v:21.19-21.20> str='\c' logic basic_prep range=[7:0] multirange=[ 0 8 ] multirange_swapped=[ 0 ]
+      AST_WIRE <UHDM-integration-tests/tests/TypedefAlias/dut.v:21.19-21.20> str='\c' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> str='\struct_t' bits='010111000111001101110100011100100111010101100011011101000101111101110100'(72) basic_prep range=[71:0] int=1668570996
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> basic_prep range=[7:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
+            AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> basic_prep range=[7:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
+        AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/TypedefAlias/dut.v:22.23-22.24> str='\d' logic basic_prep range=[63:0] multirange=[ 0 8 0 8 ] multirange_swapped=[ 0 0 ]
         ATTR \wiretype:
@@ -1770,7 +1773,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/TypedefAlias/dut.v:10.11-10.17> str='\pkg::struct_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/TypedefAlias/dut.v:10.11-10.17> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/TypedefAlias/dut.v:11.17-11.18> str='x' logic basic_prep range=[7:0]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/TypedefAlias/dut.v:11.17-11.18> str='x' logic basic_prep range=[0:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/TypedefAlias/dut.v:14.11-14.22> str='\pkg::third_alias_t' basic_prep
         AST_WIRE <UHDM-integration-tests/tests/TypedefAlias/dut.v:14.11-14.22> logic basic_prep range=[7:0]
           ATTR \packed_ranges:
@@ -1782,6 +1785,9 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
           ATTR \is_simplified_wire:
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+          AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:14.17-14.22> basic_prep range=[7:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
+            AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_RANGE <UHDM-integration-tests/tests/TypedefAlias/dut.v:14.17-14.22> basic_prep range=[7:0]
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
             AST_CONSTANT <UHDM-integration-tests/tests/TypedefAlias/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1804,7 +1810,7 @@ Dumping Verilog AST after simplification:
       (* wiretype = "\struct_t" *)
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
-      wire [7:0] c;
+      wire [0:0] c;
       (* wiretype = "\third_alias_t" *)
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
@@ -1935,9 +1941,9 @@ Finding unused cells or wires in module \dut..
 === dut ===
 
    Number of wires:                  5
-   Number of wire bits:             82
+   Number of wire bits:             75
    Number of public wires:           5
-   Number of public wire bits:      82
+   Number of public wire bits:      75
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -1952,7 +1958,7 @@ Found and reported 0 problems.
 3.1. Executing BMUXMAP pass.
 
 3.2. Executing DEMUXMAP pass.
-/* Generated by Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os) */
+/* Generated by Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os) */
 Dumping module `\dut'.
 
 (* top =  1  *)
@@ -1976,9 +1982,8 @@ module dut(clk, a, b);
   (* packed_ranges = 1'h1 *)
   (* src = "UHDM-integration-tests/tests/TypedefAlias/dut.v:21.19-21.20" *)
   (* unpacked_ranges = 1'h1 *)
-  (* unused_bits = "1 2 3 4 5 6 7" *)
   (* wiretype = "\\struct_t" *)
-  wire [7:0] c;
+  wire c;
   (* is_simplified_wire = 32'd1 *)
   (* src = "UHDM-integration-tests/tests/TypedefAlias/dut.v:17.19-17.22" *)
   input clk;
@@ -1987,12 +1992,11 @@ module dut(clk, a, b);
   (* packed_ranges = 1'h1 *)
   (* src = "UHDM-integration-tests/tests/TypedefAlias/dut.v:22.23-22.24" *)
   (* unpacked_ranges = 1'h1 *)
-  (* unused_bits = "1 2 3 4 5 6 7" *)
   (* wiretype = "\\third_alias_t" *)
   wire [63:0] d;
   assign b = a[0];
-  assign c = a;
-  assign d = { 56'h00000000000000, a };
+  assign c = a[0];
+  assign d = { 63'h0000000000000000, a[0] };
 endmodule
 
 4. Executing Verilog backend.
@@ -2047,5 +2051,5 @@ Simulating cycle 40.
 
 Warnings: 1 unique messages, 1 total
 
-Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 

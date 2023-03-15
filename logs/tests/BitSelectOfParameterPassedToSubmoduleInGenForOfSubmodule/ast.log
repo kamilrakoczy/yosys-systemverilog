@@ -23,7 +23,7 @@ cd UHDM-integration-tests/build && UHDM-integration-tests/../image/bin/yosys -c 
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+ Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 
 [TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
 [TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
@@ -3109,7 +3109,7 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> str='\pinmux_pkg::target_cfg_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[2:0] multirange=[ 3 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[0:0] multirange=[ 3 ]
       AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:11.18-11.30> str='\pinmux_pkg::NDioPads' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -3122,19 +3122,19 @@ Dumping AST before simplification:
         AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.46-19.5> bits='000'(3) basic_prep range=[2:0]
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum0' logic basic_prep
         ATTR \packed_ranges:
@@ -3271,7 +3271,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> str='\pinmux_pkg::target_cfg_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[2:0] multirange=[ 3 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[0:0] multirange=[ 3 ]
       AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:11.18-11.30> str='\pinmux_pkg::NDioPads' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -3284,19 +3284,19 @@ Dumping AST after simplification:
         AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.46-19.5> bits='000'(3) basic_prep range=[2:0]
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum0' logic basic_prep
         ATTR \packed_ranges:
@@ -3438,7 +3438,7 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> str='\pinmux_pkg::target_cfg_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[2:0] multirange=[ 3 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[0:0] multirange=[ 3 ]
       AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:11.18-11.30> str='\pinmux_pkg::NDioPads' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -3451,19 +3451,19 @@ Dumping AST before simplification:
         AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.46-19.5> bits='000'(3) basic_prep range=[2:0]
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum0' logic basic_prep
         ATTR \packed_ranges:
@@ -3600,7 +3600,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> str='\pinmux_pkg::target_cfg_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[2:0] multirange=[ 3 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[0:0] multirange=[ 3 ]
       AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:11.18-11.30> str='\pinmux_pkg::NDioPads' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -3613,19 +3613,19 @@ Dumping AST after simplification:
         AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.46-19.5> bits='000'(3) basic_prep range=[2:0]
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum0' logic basic_prep
         ATTR \packed_ranges:
@@ -3695,19 +3695,19 @@ Dumping Verilog AST after simplification:
 Generating RTLIL representation for module `\top'.
 Dumping AST before simplification:
     AST_MODULE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:52.1-60.10> str='\top'
-      AST_LOCALPARAM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:53.40-55.5> str='\PinmuxTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_LOCALPARAM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:53.40-55.5> str='\PinmuxTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:53.58-55.5> bits='001'(3) basic_prep range=[2:0] int=1
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:52.23-52.24> str='\o' output signed port=4 range=[0:0]
         ATTR \is_simplified_wire:
@@ -3716,7 +3716,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_CELL <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:57.4-59.19> str='\u_sub'
-        AST_CELLTYPE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top'
+        AST_CELLTYPE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top'
         AST_ARGUMENT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:57.4-59.19> str='\c'
           AST_IDENTIFIER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:59.15-59.16> str='\o'
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum1' logic basic_prep
@@ -3752,7 +3752,7 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> str='\pinmux_pkg::target_cfg_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[2:0] multirange=[ 3 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[0:0] multirange=[ 3 ]
       AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:11.18-11.30> str='\pinmux_pkg::NDioPads' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -3765,19 +3765,19 @@ Dumping AST before simplification:
         AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.46-19.5> bits='000'(3) basic_prep range=[2:0]
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum0' logic basic_prep
         ATTR \packed_ranges:
@@ -3840,19 +3840,19 @@ Dumping Verilog AST before simplification:
 --- END OF AST DUMP ---
 Dumping AST after simplification:
     AST_MODULE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:52.1-60.10> str='\top' basic_prep
-      AST_LOCALPARAM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:53.40-55.5> str='\PinmuxTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_LOCALPARAM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:53.40-55.5> str='\PinmuxTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:53.58-55.5> bits='001'(3) basic_prep range=[2:0] int=1
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:52.23-52.24> str='\o' output signed basic_prep port=4 range=[31:0]
         ATTR \is_simplified_wire:
@@ -3861,7 +3861,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_CELL <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:57.4-59.19> str='\u_sub' basic_prep
-        AST_CELLTYPE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top' basic_prep
+        AST_CELLTYPE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top' basic_prep
         AST_ARGUMENT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:57.4-59.19> str='\c' basic_prep
           AST_IDENTIFIER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:59.15-59.16> str='\o' basic_prep
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum1' logic basic_prep
@@ -3897,7 +3897,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> str='\pinmux_pkg::target_cfg_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[2:0] multirange=[ 3 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[0:0] multirange=[ 3 ]
       AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:11.18-11.30> str='\pinmux_pkg::NDioPads' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -3910,19 +3910,19 @@ Dumping AST after simplification:
         AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.46-19.5> bits='000'(3) basic_prep range=[2:0]
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum0' logic basic_prep
         ATTR \packed_ranges:
@@ -3983,9 +3983,9 @@ Dumping Verilog AST after simplification:
       /** AST_TYPEDEF **/
     endmodule
 --- END OF AST DUMP ---
-Generating RTLIL representation for module `$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top'.
+Generating RTLIL representation for module `$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top'.
 Dumping AST before simplification:
-    AST_MODULE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:41.1-50.10> str='$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top'
+    AST_MODULE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:41.1-50.10> str='$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top'
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum4' logic
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
@@ -4114,7 +4114,7 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> str='\pinmux_pkg::target_cfg_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[2:0] multirange=[ 3 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[0:0] multirange=[ 3 ]
       AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:11.18-11.30> str='\pinmux_pkg::NDioPads' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -4127,19 +4127,19 @@ Dumping AST before simplification:
         AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.46-19.5> bits='000'(3) basic_prep range=[2:0]
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum0' logic basic_prep
         ATTR \packed_ranges:
@@ -4174,7 +4174,7 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
-    module \$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top (c);
+    module \$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top (c);
       (* wiretype = "\target_cfg_t" *)
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
@@ -4214,7 +4214,7 @@ Dumping Verilog AST before simplification:
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
-    AST_MODULE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:41.1-50.10> str='$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top' basic_prep
+    AST_MODULE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:41.1-50.10> str='$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top' basic_prep
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum4' logic basic_prep
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -4331,7 +4331,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> str='\pinmux_pkg::target_cfg_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:13.12-13.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[2:0] multirange=[ 3 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:14.7-14.17> str='dio_pad_type' basic_prep range=[0:0] multirange=[ 3 ]
       AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:11.18-11.30> str='\pinmux_pkg::NDioPads' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -4344,19 +4344,19 @@ Dumping AST after simplification:
         AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.27-19.5> str='\pinmux_pkg::DefaultTargetCfg' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> str='\target_cfg_t' bits='01011100011101000110000101110010011001110110010101110100010111110110001101100110011001110101111101110100'(104) basic_prep range=[103:0] int=1718050676
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+            AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:17.46-19.5> bits='000'(3) basic_prep range=[2:0]
-        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[2:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
+        AST_RANGE <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:2.4-5.17> str='$enum0' logic basic_prep
         ATTR \packed_ranges:
@@ -4407,7 +4407,7 @@ Dumping AST after simplification:
           AST_IDENTIFIER <UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:48.27-48.28> str='\c' basic_prep
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
-    module \$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top (c);
+    module \$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top (c);
       (* wiretype = "\target_cfg_t" *)
       (* packed_ranges = 1'b 1 *)
       (* unpacked_ranges = 1'b 1 *)
@@ -4457,13 +4457,13 @@ Dumping Verilog AST after simplification:
 
 2.1.1. Analyzing design hierarchy..
 Top module:  \top
-Used module:     $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top
+Used module:     $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top
 Used module:         $paramod\prim_pad_attr\PadType=3'001
 Used module:             $paramod\prim_generic_pad_attr\PadType=3'001
 
 2.1.2. Analyzing design hierarchy..
 Top module:  \top
-Used module:     $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top
+Used module:     $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top
 Used module:         $paramod\prim_pad_attr\PadType=3'001
 Used module:             $paramod\prim_generic_pad_attr\PadType=3'001
 Removed 0 unused modules.
@@ -4499,25 +4499,25 @@ Converted 0 switches.
 Cleaned up 0 empty switches.
 
 2.2.12. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top.
+Optimizing module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top.
 Optimizing module top.
 Optimizing module $paramod\prim_pad_attr\PadType=3'001.
 Optimizing module $paramod\prim_generic_pad_attr\PadType=3'001.
 
 2.3. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top.
+Optimizing module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top.
 Optimizing module top.
 Optimizing module $paramod\prim_pad_attr\PadType=3'001.
 Optimizing module $paramod\prim_generic_pad_attr\PadType=3'001.
 
 2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top..
+Finding unused cells or wires in module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top..
 Finding unused cells or wires in module \top..
 Finding unused cells or wires in module $paramod\prim_pad_attr\PadType=3'001..
 Finding unused cells or wires in module $paramod\prim_generic_pad_attr\PadType=3'001..
 
 2.5. Executing CHECK pass (checking for obvious problems).
-Checking module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top...
+Checking module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top...
 Checking module $paramod\prim_generic_pad_attr\PadType=3'001...
 Checking module $paramod\prim_pad_attr\PadType=3'001...
 Checking module top...
@@ -4526,20 +4526,20 @@ Found and reported 0 problems.
 2.6. Executing OPT pass (performing simple optimizations).
 
 2.6.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top.
+Optimizing module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top.
 Optimizing module $paramod\prim_generic_pad_attr\PadType=3'001.
 Optimizing module $paramod\prim_pad_attr\PadType=3'001.
 Optimizing module top.
 
 2.6.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top'.
+Finding identical cells in module `$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top'.
 Finding identical cells in module `$paramod\prim_generic_pad_attr\PadType=3'001'.
 Finding identical cells in module `$paramod\prim_pad_attr\PadType=3'001'.
 Finding identical cells in module `\top'.
 Removed a total of 0 cells.
 
 2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top..
+Running muxtree optimizer on module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Running muxtree optimizer on module $paramod\prim_generic_pad_attr\PadType=3'001..
@@ -4554,27 +4554,27 @@ Running muxtree optimizer on module \top..
 Removed 0 multiplexer ports.
 
 2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top.
+  Optimizing cells in module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top.
   Optimizing cells in module $paramod\prim_generic_pad_attr\PadType=3'001.
   Optimizing cells in module $paramod\prim_pad_attr\PadType=3'001.
   Optimizing cells in module \top.
 Performed a total of 0 changes.
 
 2.6.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top'.
+Finding identical cells in module `$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top'.
 Finding identical cells in module `$paramod\prim_generic_pad_attr\PadType=3'001'.
 Finding identical cells in module `$paramod\prim_pad_attr\PadType=3'001'.
 Finding identical cells in module `\top'.
 Removed a total of 0 cells.
 
 2.6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top..
+Finding unused cells or wires in module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top..
 Finding unused cells or wires in module $paramod\prim_generic_pad_attr\PadType=3'001..
 Finding unused cells or wires in module $paramod\prim_pad_attr\PadType=3'001..
 Finding unused cells or wires in module \top..
 
 2.6.7. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top.
+Optimizing module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top.
 Optimizing module $paramod\prim_generic_pad_attr\PadType=3'001.
 Optimizing module $paramod\prim_pad_attr\PadType=3'001.
 Optimizing module top.
@@ -4584,7 +4584,7 @@ Optimizing module top.
 2.7. Executing WREDUCE pass (reducing word size of cells).
 
 2.8. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top..
+Finding unused cells or wires in module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top..
 Finding unused cells or wires in module $paramod\prim_generic_pad_attr\PadType=3'001..
 Finding unused cells or wires in module $paramod\prim_pad_attr\PadType=3'001..
 Finding unused cells or wires in module \top..
@@ -4594,20 +4594,20 @@ Finding unused cells or wires in module \top..
 2.10. Executing OPT pass (performing simple optimizations).
 
 2.10.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top.
+Optimizing module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top.
 Optimizing module $paramod\prim_generic_pad_attr\PadType=3'001.
 Optimizing module $paramod\prim_pad_attr\PadType=3'001.
 Optimizing module top.
 
 2.10.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top'.
+Finding identical cells in module `$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top'.
 Finding identical cells in module `$paramod\prim_generic_pad_attr\PadType=3'001'.
 Finding identical cells in module `$paramod\prim_pad_attr\PadType=3'001'.
 Finding identical cells in module `\top'.
 Removed a total of 0 cells.
 
 2.10.3. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top..
+Finding unused cells or wires in module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top..
 Finding unused cells or wires in module $paramod\prim_generic_pad_attr\PadType=3'001..
 Finding unused cells or wires in module $paramod\prim_pad_attr\PadType=3'001..
 Finding unused cells or wires in module \top..
@@ -4616,7 +4616,7 @@ Finding unused cells or wires in module \top..
 
 2.11. Printing statistics.
 
-=== $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top ===
+=== $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top ===
 
    Number of wires:                  1
    Number of wire bits:             32
@@ -4661,12 +4661,12 @@ Finding unused cells or wires in module \top..
    Number of memory bits:            0
    Number of processes:              0
    Number of cells:                  1
-     $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top      1
+     $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top      1
 
 === design hierarchy ===
 
    top                               1
-     $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top      1
+     $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top      1
        $paramod\prim_pad_attr\PadType=3'001      1
          $paramod\prim_generic_pad_attr\PadType=3'001      1
 
@@ -4680,7 +4680,7 @@ Finding unused cells or wires in module \top..
    Number of cells:                  0
 
 2.12. Executing CHECK pass (checking for obvious problems).
-Checking module $paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top...
+Checking module $paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top...
 Checking module $paramod\prim_generic_pad_attr\PadType=3'001...
 Checking module $paramod\prim_pad_attr\PadType=3'001...
 Checking module top...
@@ -4691,11 +4691,11 @@ Found and reported 0 problems.
 3.1. Executing BMUXMAP pass.
 
 3.2. Executing DEMUXMAP pass.
-/* Generated by Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os) */
-Dumping module `$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top'.
+/* Generated by Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os) */
+Dumping module `$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top'.
 
 (* src = "UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:41.1-50.10" *)
-module \$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top (c);
+module \$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top (c);
   (* is_simplified_wire = 32'd1 *)
   (* src = "UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:41.27-41.28" *)
   output [31:0] c;
@@ -4741,7 +4741,7 @@ module top(o);
   wire [31:0] o;
   (* module_not_derived = 32'd1 *)
   (* src = "UHDM-integration-tests/tests/BitSelectOfParameterPassedToSubmoduleInGenForOfSubmodule/top.sv:57.4-59.19" *)
-  \$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top  u_sub (
+  \$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top  u_sub (
     .c(o)
   );
 endmodule
@@ -4751,7 +4751,7 @@ endmodule
 4.1. Executing BMUXMAP pass.
 
 4.2. Executing DEMUXMAP pass.
-Dumping module `$paramod$069a38f3842f03c39169c91405b6689b3178e237\sub_top'.
+Dumping module `$paramod$e1da8cf73c117a32597fcf6543aa55ee282c7ab9\sub_top'.
 Dumping module `$paramod\prim_generic_pad_attr\PadType=3'001'.
 Dumping module `$paramod\prim_pad_attr\PadType=3'001'.
 Dumping module `\top'.
@@ -4801,5 +4801,5 @@ Simulating cycle 40.
 
 Warnings: 3 unique messages, 3 total
 
-Yosys 0.27+9 (git sha1 101d19bb6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+Yosys 0.27+9 (git sha1 57fb1f51b, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 
