@@ -1163,7 +1163,7 @@ Dumping AST before simplification:
         AST_IDENTIFIER <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:14.20-14.28> str='\my_pkg::SeedInfoPageSel'
       AST_TYPEDEF <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:2.12-2.18> str='\my_pkg::page_addr_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:2.12-2.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:3.19-3.23> str='addr' logic basic_prep range=[3:0]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:3.19-3.23> str='addr' logic basic_prep range=[0:0]
       AST_PARAMETER <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:6.24-6.36> str='\my_pkg::SeedBank' basic_prep range=[1:0] multirange=[ 0 2 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -1176,19 +1176,19 @@ Dumping AST before simplification:
         AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:6.18-6.23> basic_prep range=[1:0]
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:8.26-10.5> str='\my_pkg::SeedInfoPageSel' logic basic_prep range=[3:0] multirange=[ 0 4 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:8.26-10.5> str='\my_pkg::SeedInfoPageSel' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> str='\page_addr_t' bits='010111000111000001100001011001110110010101011111011000010110010001100100011100100101111101110100'(96) basic_prep range=[95:0] int=1685217140
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> basic_prep range=[3:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed basic_prep range=[31:0] int=3
+            AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:8.44-10.5> bits='0011'(4) basic_prep range=[3:0] int=3
-        AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> basic_prep range=[3:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed basic_prep range=[31:0] int=3
+        AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
@@ -1216,10 +1216,10 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:14.11-14.44> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:14.11-14.12> str='\o' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:14.20-14.28> bits='0011'(4) basic_prep range=[3:0] int=3
+        AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:14.20-14.28> bits='1'(1) basic_prep range=[0:0] int=1
       AST_TYPEDEF <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:2.12-2.18> str='\my_pkg::page_addr_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:2.12-2.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:3.19-3.23> str='addr' logic basic_prep range=[3:0]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:3.19-3.23> str='addr' logic basic_prep range=[0:0]
       AST_PARAMETER <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:6.24-6.36> str='\my_pkg::SeedBank' basic_prep range=[1:0] multirange=[ 0 2 ] multirange_swapped=[ 0 ]
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
@@ -1232,19 +1232,19 @@ Dumping AST after simplification:
         AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:6.18-6.23> basic_prep range=[1:0]
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:8.26-10.5> str='\my_pkg::SeedInfoPageSel' logic basic_prep range=[3:0] multirange=[ 0 4 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:8.26-10.5> str='\my_pkg::SeedInfoPageSel' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> str='\page_addr_t' bits='010111000111000001100001011001110110010101011111011000010110010001100100011100100101111101110100'(96) basic_prep range=[95:0] int=1685217140
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> basic_prep range=[3:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed basic_prep range=[31:0] int=3
+            AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:8.44-10.5> bits='0011'(4) basic_prep range=[3:0] int=3
-        AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> basic_prep range=[3:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed basic_prep range=[31:0] int=3
+        AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
@@ -1258,7 +1258,7 @@ Dumping Verilog AST after simplification:
       /** AST_PARAMETER **/
       (* is_simplified_wire = 1 *)
       output signed [31:0] o;
-      assign o = 4'b 0011;
+      assign o = 1'b 1;
       /** AST_TYPEDEF **/
     endmodule
 --- END OF AST DUMP ---
@@ -1401,7 +1401,7 @@ module top(o);
   (* src = "UHDM-integration-tests/tests/StructParameterInitializedWithPatternAndReferenced/top.sv:13.23-13.24" *)
   output [31:0] o;
   wire [31:0] o;
-  assign o = 32'd3;
+  assign o = 32'd1;
 endmodule
 
 4. Executing Verilog backend.

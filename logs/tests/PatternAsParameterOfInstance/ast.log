@@ -1409,7 +1409,7 @@ Dumping AST before simplification:
               AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='01'(2) basic_prep range=[1:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:9.10-9.11> bits='01'(2) basic_prep range=[1:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:2.20-2.25> basic_prep range=[1:0]
           AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
           AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1452,7 +1452,7 @@ Dumping AST after simplification:
               AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='01'(2) basic_prep range=[1:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:9.10-9.11> bits='01'(2) basic_prep range=[1:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:2.20-2.25> basic_prep range=[1:0]
           AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
           AST_CONSTANT <UHDM-integration-tests/tests/PatternAsParameterOfInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]

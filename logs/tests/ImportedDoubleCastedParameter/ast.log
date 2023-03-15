@@ -1394,19 +1394,19 @@ Dumping AST before simplification:
       AST_TYPEDEF <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:2.12-2.18> str='\app_config_t'
         AST_STRUCT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:2.12-2.18> basic_prep
           AST_STRUCT_ITEM <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:3.20-3.26> str='Prefix' logic basic_prep range=[95:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.27-8.5> str='\A' logic basic_prep range=[95:0] multirange=[ 0 96 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.27-8.5> str='\A' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> str='\app_config_t' bits='01011100011000010111000001110000010111110110001101101111011011100110011001101001011001110101111101110100'(104) basic_prep range=[103:0] int=1768382324
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[95:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed basic_prep range=[31:0] int=95
+            AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.31-8.5> bits='010011000101001001010100010000110101111101001101010011110101001001000000000000010000000000000001'(96) basic_prep range=[95:0] int=1073807361
-        AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[95:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed basic_prep range=[31:0] int=95
+        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) range=[0:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:11.23-11.24> str='\o' output signed port=1 range=[0:0]
         ATTR \is_simplified_wire:
@@ -1418,24 +1418,24 @@ Dumping AST before simplification:
         AST_IDENTIFIER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:13.11-13.12> str='\o'
         AST_IDENTIFIER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:13.19-13.27> str='\A' basic_prep
           AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0>
-            AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed range=[31:0] int=95
+            AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:2.12-2.18> str='\kmac_pkg::app_config_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:2.12-2.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:3.20-3.26> str='Prefix' logic basic_prep range=[95:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.27-8.5> str='\kmac_pkg::A' logic basic_prep range=[95:0] multirange=[ 0 96 ] multirange_swapped=[ 0 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:3.20-3.26> str='Prefix' logic basic_prep range=[0:0]
+      AST_PARAMETER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.27-8.5> str='\kmac_pkg::A' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> str='\app_config_t' bits='01011100011000010111000001110000010111110110001101101111011011100110011001101001011001110101111101110100'(104) basic_prep range=[103:0] int=1768382324
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[95:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed basic_prep range=[31:0] int=95
+            AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.31-8.5> bits='010011000101001001010100010000110101111101001101010011110101001001000000000000010000000000000001'(96) basic_prep range=[95:0] int=1073807361
-        AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[95:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed basic_prep range=[31:0] int=95
+        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
@@ -1451,7 +1451,7 @@ Dumping Verilog AST before simplification:
       (* is_simplified_wire = 1 *)
       output signed [31:0] o;
       /** AST_TYPEDEF **/
-      assign o = A[95:0];
+      assign o = A[0:0];
       /** AST_TYPEDEF **/
     endmodule
 --- END OF AST DUMP ---
@@ -1460,19 +1460,19 @@ Dumping AST after simplification:
       AST_TYPEDEF <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:2.12-2.18> str='\app_config_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:2.12-2.18> basic_prep
           AST_STRUCT_ITEM <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:3.20-3.26> str='Prefix' logic basic_prep range=[95:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.27-8.5> str='\A' logic basic_prep range=[95:0] multirange=[ 0 96 ] multirange_swapped=[ 0 ]
+      AST_PARAMETER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.27-8.5> str='\A' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> str='\app_config_t' bits='01011100011000010111000001110000010111110110001101101111011011100110011001101001011001110101111101110100'(104) basic_prep range=[103:0] int=1768382324
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[95:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed basic_prep range=[31:0] int=95
+            AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.31-8.5> bits='010011000101001001010100010000110101111101001101010011110101001001000000000000010000000000000001'(96) basic_prep range=[95:0] int=1073807361
-        AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[95:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed basic_prep range=[31:0] int=95
+        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_WIRE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:11.23-11.24> str='\o' output signed basic_prep port=1 range=[31:0]
         ATTR \is_simplified_wire:
@@ -1482,23 +1482,23 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:13.11-13.28> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:13.11-13.12> str='\o' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:13.19-13.27> bits='010011000101001001010100010000110101111101001101010011110101001001000000000000010000000000000001'(96) basic_prep range=[95:0] int=1073807361
+        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:13.19-13.27> bits='1'(1) basic_prep range=[0:0] int=1
       AST_TYPEDEF <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:2.12-2.18> str='\kmac_pkg::app_config_t' basic_prep
         AST_STRUCT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:2.12-2.18> basic_prep
-          AST_STRUCT_ITEM <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:3.20-3.26> str='Prefix' logic basic_prep range=[95:0]
-      AST_PARAMETER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.27-8.5> str='\kmac_pkg::A' logic basic_prep range=[95:0] multirange=[ 0 96 ] multirange_swapped=[ 0 ]
+          AST_STRUCT_ITEM <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:3.20-3.26> str='Prefix' logic basic_prep range=[0:0]
+      AST_PARAMETER <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.27-8.5> str='\kmac_pkg::A' logic basic_prep range=[0:0] multirange=[ 0 1 ] multirange_swapped=[ 0 ]
         ATTR \wiretype:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> str='\app_config_t' bits='01011100011000010111000001110000010111110110001101101111011011100110011001101001011001110101111101110100'(104) basic_prep range=[103:0] int=1768382324
         ATTR \packed_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-            AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[95:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed basic_prep range=[31:0] int=95
+            AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[0:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
               AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
         ATTR \unpacked_ranges:
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:6.31-8.5> bits='010011000101001001010100010000110101111101001101010011110101001001000000000000010000000000000001'(96) basic_prep range=[95:0] int=1073807361
-        AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[95:0]
-          AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000001011111'(32) signed basic_prep range=[31:0] int=95
+        AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_RANGE <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
@@ -1514,7 +1514,7 @@ Dumping Verilog AST after simplification:
       (* is_simplified_wire = 1 *)
       output signed [31:0] o;
       /** AST_TYPEDEF **/
-      assign o = 96'b 010011000101001001010100010000110101111101001101010011110101001001000000000000010000000000000001;
+      assign o = 1'b 1;
       /** AST_TYPEDEF **/
     endmodule
 --- END OF AST DUMP ---
@@ -1657,7 +1657,7 @@ module top(o);
   (* src = "UHDM-integration-tests/tests/ImportedDoubleCastedParameter/top.sv:11.23-11.24" *)
   output [31:0] o;
   wire [31:0] o;
-  assign o = 32'd1073807361;
+  assign o = 32'd1;
 endmodule
 
 4. Executing Verilog backend.
