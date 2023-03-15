@@ -3,6 +3,8 @@ name: Parsing Tests
 on:
   workflow_call:
 
+permissions: write-all
+
 env:
   TESTS_TO_SKIP: ibex swerv synthesis opentitan serv serv-minimal hello-uvm assignment-pattern Forever BitsCallOnType OneClass
     Continue AnonymousUnion ParameterUnpackedArray VoidFunction2Returns PatternStruct ImportedFunctionCallInModuleAndSubmodule
