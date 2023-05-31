@@ -117,6 +117,7 @@ jobs:
   tests-parsing:
     name: Parsing Tests
     uses: ./.github/workflows/parsing-tests.yml
+    secrets: inherit
     with:
       uhdm_tests_branch: ${{github.event.inputs.uhdm_tests_branch}}
     needs: build-binaries
