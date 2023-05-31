@@ -28,8 +28,7 @@ env:
 jobs:
   tests-read-uhdm:
     name: Surelog
-    runs-on: [self-hosted, Linux, X64]
-    container: ubuntu:jammy
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     env:
@@ -46,17 +45,14 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Set up common Ubuntu configuration
-        run: ./.github/scripts/set-up-common-ubuntu-configuration.sh
-
       - name: Install dependencies
         run: |
-          apt-get update -qq
-          apt install -y software-properties-common
-          add-apt-repository ppa:ubuntu-toolchain-r/test
-          apt-get update -qq
-          apt install -y gcc-9 g++-9 build-essential cmake tclsh ant default-jre swig google-perftools libgoogle-perftools-dev python3 python3-dev uuid uuid-dev tcl-dev flex libfl-dev git
-          update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+          sudo apt-get update -qq
+          sudo apt install -y software-properties-common
+          sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+          sudo apt-get update -qq
+          sudo apt install -y gcc-9 g++-9 build-essential cmake tclsh ant default-jre swig google-perftools libgoogle-perftools-dev python3 python3-dev uuid uuid-dev tcl-dev flex libfl-dev git libunwind-dev
+          sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
       - name: Checkout submodules
         run: |
@@ -121,8 +117,7 @@ jobs:
 
   tests-read-systemverilog:
     name: SystemVerilog Plugin
-    runs-on: [self-hosted, Linux, X64]
-    container: ubuntu:jammy
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     env:
@@ -139,17 +134,14 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Set up common Ubuntu configuration
-        run: ./.github/scripts/set-up-common-ubuntu-configuration.sh
-
       - name: Install dependencies
         run: |
-          apt-get update -qq
-          apt install -y software-properties-common
-          add-apt-repository ppa:ubuntu-toolchain-r/test
-          apt-get update -qq
-          apt install -y gcc-9 g++-9 build-essential cmake tclsh ant default-jre swig google-perftools libgoogle-perftools-dev python3 python3-dev uuid uuid-dev tcl-dev flex libfl-dev git
-          update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+          sudo apt-get update -qq
+          sudo apt install -y software-properties-common
+          sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+          sudo apt-get update -qq
+          sudo apt install -y gcc-9 g++-9 build-essential cmake tclsh ant default-jre swig google-perftools libgoogle-perftools-dev python3 python3-dev uuid uuid-dev tcl-dev flex libfl-dev git libunwind-dev
+          sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
       - name: Checkout submodules
         run: |
@@ -208,8 +200,7 @@ jobs:
 
   generate-tests-summary:
     name: Summary Generation
-    runs-on: [self-hosted, Linux, X64]
-    container: ubuntu:jammy
+    runs-on: ubuntu-latest
     if: ${{ !cancelled() }}
     needs:
       - tests-read-uhdm
@@ -219,9 +210,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 1
-
-      - name: Set up common Ubuntu configuration
-        run: ./.github/scripts/set-up-common-ubuntu-configuration.sh
 
       - name: Download test results
         uses: /actions/download-artifact@v3

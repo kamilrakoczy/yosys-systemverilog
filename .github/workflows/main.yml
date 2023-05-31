@@ -22,53 +22,18 @@ on:
         required: false
         default: ''
   push:
-    branches:
-      - master
   pull_request:
 
 env:
   GHA_CUSTOM_LINE_PREFIX: "▌"
 
 jobs:
-  emit-workflow-info:
-    name: Emit Workflow Info
-    if: ${{ github.event_name == 'workflow_dispatch' }}
-    runs-on: [self-hosted, Linux, X64]
-    container: 'bitnami/git:2.40.1-debian-11-r4'
-    env:
-      PLUGINS_BRANCH_SPEC: ${{github.event.inputs.plugins_branch}}
-      UHDM_TESTS_BRANCH_SPEC: ${{github.event.inputs.uhdm_tests_branch}}
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: false
-          fetch-depth: 1
-
-      - run: |
-          source ./.github/scripts/submodule-revision-override.inc.bash
-
-          {
-            emit-custom-branch-info-begin
-            emit-custom-branch-info-entry \
-                'yosys-f4pga-plugins' \
-                "$yosys_f4pga_plugins_default_gh_user" "$yosys_f4pga_plugins_default_gh_repo" \
-                "$PLUGINS_BRANCH_SPEC"
-            emit-custom-branch-info-entry \
-                'UHDM-integration-tests' \
-                "$uhdm_tests_default_gh_user" "$uhdm_tests_default_gh_repo" \
-                "$UHDM_TESTS_BRANCH_SPEC"
-            emit-custom-branch-info-end
-          } > $GITHUB_STEP_SUMMARY
-
   build-binaries:
     name: Build Binaries
-    runs-on: [self-hosted, Linux, X64]
-    container: ubuntu:jammy
+    runs-on: ubuntu-latest
     env:
       CC: gcc-9
       CXX: g++-9
-      CCACHE_DIR: "/root/yosys-uhdm-plugin-integration/yosys-uhdm-plugin-integration/.cache/"
       DEBIAN_FRONTEND: noninteractive
       PLUGIN_ASAN: 1
       GHA_MACHINE_TYPE: "n2-highmem-8"
@@ -79,21 +44,18 @@ jobs:
           submodules: false
           fetch-depth: 1
 
-      - name: Set up common Ubuntu configuration
-        run: ./.github/scripts/set-up-common-ubuntu-configuration.sh
-
       - name: Install dependencies
         run: |
-          apt-get update -qq
-          apt install -y software-properties-common
-          add-apt-repository ppa:ubuntu-toolchain-r/test
-          apt-get update -qq
-          apt install -y gcc-9 g++-9 build-essential cmake tclsh ant default-jre swig google-perftools libgoogle-perftools-dev python3 python3-dev python3-pip uuid uuid-dev tcl-dev flex libfl-dev git pkg-config libreadline-dev bison libffi-dev wget ccache
-          update-alternatives --install /usr/bin/python python /usr/bin/python3 1
-          update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
-          pip install orderedmultidict
-          pip install --upgrade pip
-          pip install cmake
+          sudo apt-get update -qq
+          sudo apt install -y software-properties-common
+          sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+          sudo apt-get update -qq
+          sudo apt install -y gcc-9 g++-9 build-essential cmake tclsh ant default-jre swig google-perftools libgoogle-perftools-dev python3 python3-dev python3-pip uuid uuid-dev tcl-dev flex libfl-dev git pkg-config libreadline-dev bison libffi-dev wget ccache libunwind-dev
+          sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+          sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
+          sudo pip install orderedmultidict
+          sudo pip install --upgrade pip
+          sudo pip install cmake
 
       - name: Create Cache Timestamp
         id: cache_timestamp
@@ -124,7 +86,7 @@ jobs:
       - name: Setup cache
         uses: actions/cache@v2
         with:
-          path: ${{ env.CCACHE_DIR }}
+          path: ~/.ccache
           key: cache_${{ steps.cache_timestamp.outputs.time }}
           restore-keys: cache_
 
@@ -152,198 +114,9 @@ jobs:
           path: |
             **/plot_*.svg
 
-  build-sv2v:
-    name: Build sv2v
-    runs-on: [self-hosted, Linux, X64]
-    container: ubuntu:jammy
-    env:
-      DEBIAN_FRONTEND: noninteractive
-      GHA_MACHINE_TYPE: "n2-standard-4"
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: false
-          fetch-depth: 1
-
-      - name: Set up common Ubuntu configuration
-        run: ./.github/scripts/set-up-common-ubuntu-configuration.sh
-
-      - name: Install dependencies
-        run: |
-          apt-get update -qq
-          apt install -y git wget
-
-      - name: 'Read submodule revisions'
-        id: rev
-        run: |
-           CACHE_HASH_LENGTH=20
-           repo_hash="$(git submodule status sv2v)"
-           # Skip first character which is ' ' or '+'
-           repo_hash="${repo_hash:1:$CACHE_HASH_LENGTH}"
-           printf '::set-output name=%s::%s\n' 'sv2v-submodule-rev' "${repo_hash}"
-
-      - name: Try restoring build results from cache
-        id: cache-restore
-        uses: actions/cache/restore@v3
-        with:
-          path: image/bin/sv2v
-          key: sv2v@${{ steps.rev.outputs.sv2v-submodule-rev }}
-
-      - name: Checkout submodules
-        if: ${{ steps.cache-restore.outputs.cache-hit != 'true' }}
-        run: |
-          git submodule update --depth 1 --init --recursive \
-              sv2v \
-              ;
-
-      - name: Build binaries
-        if: ${{ steps.cache-restore.outputs.cache-hit != 'true' }}
-        run: |
-          mkdir -p $PWD/image/bin
-          export PATH=$PWD/install/bin:/usr/local/bin:${PATH}
-          wget -qO- https://get.haskellstack.org/ | sh -s - -f -d /usr/local/bin
-          make -j$(nproc) -C $PWD/sv2v
-          cp $PWD/sv2v/bin/sv2v image/bin
-
-      - name: Upload binaries
-        uses: actions/upload-artifact@v2
-        with:
-          name: sv2v
-          path: |
-            image/bin/sv2v
-
-      - name: Save build results to cache
-        if: ${{ steps.cache-restore.outputs.cache-hit != 'true' && ! (failure() || cancelled()) }}
-        uses: actions/cache/save@v3
-        with:
-          path: image/bin/sv2v
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-
-      - name: Upload load graphs
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: plots
-          path: |
-            **/plot_*.svg
-
   tests-parsing:
     name: Parsing Tests
     uses: ./.github/workflows/parsing-tests.yml
     with:
       uhdm_tests_branch: ${{github.event.inputs.uhdm_tests_branch}}
     needs: build-binaries
-
-  tests-formal-verification:
-    name: Formal Verification Tests
-    uses: ./.github/workflows/formal-verification.yml
-    with:
-      uhdm_tests_branch: ${{github.event.inputs.uhdm_tests_branch}}
-    needs:
-      - build-binaries
-      - build-sv2v
-
-  tests-large-designs:
-    name: Large Designs Tests
-    uses: ./.github/workflows/large-designs.yml
-    needs: build-binaries
-
-  release:
-    name: Release Package
-    needs:
-      - build-binaries
-      - tests-parsing
-      - tests-formal-verification
-      - tests-large-designs
-    runs-on: ubuntu-20.04
-    if: ${{github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')}}
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-         # Download complete repository + tags
-         fetch-depth: 0
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: binaries
-
-      # See https://github.com/actions/upload-artifact/issues/38
-      - name: Extract
-        run: tar -xf binaries.tar
-
-      - name: Generate tarball and apply TAG
-        run: |
-          GIT_VERSION=${GIT_VERSION:-$(git rev-parse --short "$GITHUB_SHA")}
-          DISTRO_ARCH=$(uname -m)
-          DISTRO=$(lsb_release --short --id)
-          DISTRO_RELEASE=$(lsb_release --short --release)
-          DISTRO_CODENAME=$(lsb_release --short --codename | sed -e's/[^A-Za-z0-9]//g')
-          FULL_TARBALL=yosys-uhdm-integration-$GIT_VERSION-$DISTRO-$DISTRO_RELEASE-$DISTRO_CODENAME-$DISTRO_ARCH.tar.gz
-          PLUGIN_TARBALL=yosys-uhdm-plugin-$GIT_VERSION-$DISTRO-$DISTRO_RELEASE-$DISTRO_CODENAME-$DISTRO_ARCH.tar.gz
-          # Create a tag of form ad2466e-2021-12-06
-          TAG="${TAG:-$(git show -s --date=short --format=%h-%cd)}"
-          git tag "$TAG" || true
-          echo "TAG=$TAG" >> $GITHUB_ENV
-          ls -lah image
-          tar -zcvf $FULL_TARBALL image
-          tar -zcvf $PLUGIN_TARBALL image/share/yosys/plugins/uhdm.so image/share/yosys/plugins/systemverilog.so install_plugin.sh
-      - name: Get PR data
-        uses: 8BitJonny/gh-get-current-pr@2.2.0
-        with:
-          sha: ${{ github.event.pull_request.head.sha }}
-        id: release_pr
-      - name: Deploy release
-        env:
-          RELEASE_NAME: >
-            ${{ steps.release_pr.outputs.pr_found == 'true'
-                &&
-                  format('{0}: #{1}: {2}',
-                         env.TAG,
-                         steps.release_pr.outputs.number,
-                         steps.release_pr.outputs.pr_title)
-                ||
-                  env.TAG }}
-          RELEASE_BODY: >
-            ${{ steps.release_pr.outputs.pr_found == 'true'
-                &&
-                  steps.release_pr.outputs.pr_body
-                ||
-                  '' }}
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: yosys-uhdm-*.tar.gz
-          tag: ${{ env.TAG }}
-          release_name: ${{ env.RELEASE_NAME }}
-          body: ${{ env.RELEASE_BODY }}
-          overwrite: true
-          file_glob: true
-
-  install-plugin:
-    name: Release Package Installation Test
-    runs-on: [self-hosted, Linux, X64]
-    container: debian:sid
-    needs: release
-    env:
-      DEBIAN_FRONTEND: noninteractive
-      GHA_MACHINE_TYPE: "n2-standard-2"
-
-    steps:
-      - name: Install Yosys and dependencies
-        run: |
-          apt update
-          apt upgrade -y
-          apt install -y yosys yosys-dev curl jq wget libreadline-dev
-      - name: Download and extract UHDM plugin
-        run: |
-          curl https://api.github.com/repos/antmicro/yosys-uhdm-plugin-integration/releases/latest -L | jq .assets[1] | grep "browser_download_url" | grep -Eo 'https://[^\"]*' | xargs wget -O - | tar -xz
-      - name: Install it
-        run: |
-          ./install_plugin.sh
-      - name: Run Yosys and load SystemVerilog plugin
-        run: yosys -p "plugin -i systemverilog"
-      - name: Run Yosys and load (deprecated) UHDM plugin
-        run: yosys -p "plugin -i uhdm"
