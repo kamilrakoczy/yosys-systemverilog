@@ -236,6 +236,11 @@ jobs:
             PUSH_BRANCH="$PUSH_BRANCH+tests+$UHDM_TESTS_BRANCH_SPEC"
           fi
           echo "PUSH_BRANCH=$PUSH_BRANCH" >> "$GITHUB_ENV"
+          IN_PR=false
+          if [[ ! -z ${{ github.event.inputs.pull_request_number }} ]]; then
+            IN_PR=true
+          fi
+          echo "IN_PR=$IN_PR" >> "$GITHUB_ENV"
         env:
           PLUGINS_BRANCH_SPEC: ${{github.event.inputs.plugins_branch}}
           UHDM_TESTS_BRANCH_SPEC: ${{github.event.inputs.uhdm_tests_branch}}
@@ -253,7 +258,7 @@ jobs:
           target-branch: ${{ env.PUSH_BRANCH }}
           create-target-branch-if-needed: true
       - name: Post comment
-        if: "${{ github.event.inputs.pull_request_number != '' }}"
+        if: env.IN_PR == true
         uses: KeisukeYamashita/create-comment@v1
         with:
           number: ${{ github.event.inputs.pull_request_number }}
