@@ -192,12 +192,12 @@ jobs:
       - name: Push branch
         run: |
           branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
-          PUSH_BRANCH=logs/$branch
+          PUSH_BRANCH=logs+$branch
           if [[ ! -z "$PLUGINS_BRANCH_SPEC" ]]; then
-            PUSH_BRANCH="$PUSH_BRANCH/plugins/$PLUGINS_BRANCH_SPEC"
+            PUSH_BRANCH="$PUSH_BRANCH+plugins+$PLUGINS_BRANCH_SPEC"
           fi
           if [[ ! -z "$UHDM_TESTS_BRANCH_SPEC" ]]; then
-            PUSH_BRANCH="$PUSH_BRANCH/tests/$UHDM_TESTS_BRANCH_SPEC"
+            PUSH_BRANCH="$PUSH_BRANCH+tests+$UHDM_TESTS_BRANCH_SPEC"
           fi
           echo "PUSH_BRANCH=$PUSH_BRANCH" >> "$GITHUB_ENV"
         env:
