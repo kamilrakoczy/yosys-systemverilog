@@ -186,9 +186,6 @@ jobs:
           mv test-results/test-results.failed test-results/test-results-systemverilog.failed || true
 
       - name: Push branch
-	env:
-	  PLUGINS_BRANCH_SPEC: ${{github.event.inputs.plugins_branch}}
-	  UHDM_TESTS_BRANCH_SPEC: ${{github.event.inputs.uhdm_tests_branch}}
         run: |
           echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
           source ./.github/scripts/submodule-revision-override.inc.bash
@@ -199,6 +196,9 @@ jobs:
           parse-custom-branch-spec gh_user gh_repo gh_branch "$branch_spec"
           echo "yosys-f4pga-plugins: $gh_user -> $gh_repo -> $gh_branch"
           echo "UHDM-integration-tests: $uhdm_tests_default_gh_user -> $uhdm_tests_default_gh_repo -> $UHDM_TESTS_BRANCH_SPEC"
+        env:
+          PLUGINS_BRANCH_SPEC: ${{github.event.inputs.plugins_branch}}
+          UHDM_TESTS_BRANCH_SPEC: ${{github.event.inputs.uhdm_tests_branch}}
 
       - name: Push logs
         uses: cpina/github-action-push-to-another-repository@main
