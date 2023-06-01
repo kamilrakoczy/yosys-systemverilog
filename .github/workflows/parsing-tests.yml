@@ -253,6 +253,7 @@ jobs:
           target-branch: ${{ env.PUSH_BRANCH }}
           create-target-branch-if-needed: true
       - name: Post comment
+        if: ${{ github.event.inputs.pull_request_number }} != ''
         uses: KeisukeYamashita/create-comment@v1
         with:
           number: ${{ github.event.inputs.pull_request_number }}
