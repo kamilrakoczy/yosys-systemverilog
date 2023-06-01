@@ -179,7 +179,6 @@ jobs:
       - name: Build & Test (yosys)
         run: |
           ./.github/scripts/run_group_test.sh
-          git diff
 
         env:
           TARGET: uhdm/yosys/test-ast
@@ -192,20 +191,15 @@ jobs:
 
       - name: Push branch
         run: |
-          echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
-          source ./.github/scripts/submodule-revision-override.inc.bash
-          gh_user="$yosys_f4pga_plugins_default_gh_user"
-          gh_repo="$yosys_f4pga_plugins_default_gh_repo"
-          branch_spec="$PLUGINS_BRANCH_SPEC"
-          gh_branch="$branch_spec"
-          parse-custom-branch-spec gh_user gh_repo gh_branch "$branch_spec"
-          gh_rev="$(git ls-remote -q "$gh_repo_url" "$gh_branch" 2>/dev/null | head -n1 | cut -f 1)"
-          if [[ -z "$gh_rev" && "$gh_branch" =~ ^[0-9a-fA-F]{40}$ ]]; then
-            gh_rev="$gh_branch"
-            gh_branch=''
+          branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
+          PUSH_BRANCH=logs/$branch
+          if [[ ! -z "$PLUGINS_BRANCH_SPEC" ]]; then
+            PUSH_BRANCH="$PUSH_BRANCH/plugins/$PLUGINS_BRANCH_SPEC"
           fi
-          echo "yosys-f4pga-plugins: $gh_user -> $gh_repo -> $PLUGINS_BRANCH_SPEC -> $gh_rev"
-          echo "UHDM-integration-tests: $uhdm_tests_default_gh_user -> $uhdm_tests_default_gh_repo -> $UHDM_TESTS_BRANCH_SPEC"
+          if [[ ! -z "$UHDM_TESTS_BRANCH_SPEC" ]]; then
+            PUSH_BRANCH="$PUSH_BRANCH/tests/$UHDM_TESTS_BRANCH_SPEC"
+          fi
+          echo "PUSH_BRANCH=$PUSH_BRANCH" >> "$GITHUB_ENV"
         env:
           PLUGINS_BRANCH_SPEC: ${{github.event.inputs.plugins_branch}}
           UHDM_TESTS_BRANCH_SPEC: ${{github.event.inputs.uhdm_tests_branch}}
@@ -220,7 +214,7 @@ jobs:
           destination-repository-name: 'yosys-systemverilog-logs'
           commit-message: 'Update logs'
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
-          target-branch: main
+          target-branch: $PUSH_BRANCH
 
       - uses: actions/upload-artifact@v3
         if: ${{ always() }}
