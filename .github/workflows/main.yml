@@ -86,7 +86,7 @@ jobs:
       - name: Setup cache
         uses: actions/cache@v2
         with:
-          path: ~/ccache
+          path: ~/.cache/ccache
           key: cache_${{ steps.cache_timestamp.outputs.time }}
           restore-keys: cache_
 
