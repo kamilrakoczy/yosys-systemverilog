@@ -257,7 +257,7 @@ jobs:
           comment: https://github.com/kamilrakoczy/yosys-systemverilog-logs/compare/${{ env.PUSH_BRANCH }}
       - name: Create summary
         run:
-          echo "https://github.com/kamilrakoczy/yosys-systemverilog-logs/compare/${{ env.PUSH_BRANCH }}" >> $GITHUB_STEP_SUMMAR
+          echo "https://github.com/kamilrakoczy/yosys-systemverilog-logs/compare/${{ env.PUSH_BRANCH }}" >> $GITHUB_STEP_SUMMARY
 
   generate-tests-summary:
     name: Summary Generation
