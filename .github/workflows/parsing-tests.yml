@@ -218,6 +218,7 @@ jobs:
         uses: /actions/download-artifact@v3
         with:
           name: parsing-logs
+          path: logs
       - name: Push branch
         run: |
           branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
