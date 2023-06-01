@@ -8,6 +8,11 @@ on:
         required: false
         type: 'string'
         default: ''
+      plugins_branch:
+        description: 'yosys-f4pga-plugins branch or URL'
+        required: false
+        type: 'string'
+        default: ''
 
 env:
   GHA_CUSTOM_LINE_PREFIX: "▌"
