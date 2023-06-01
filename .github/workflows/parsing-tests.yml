@@ -215,6 +215,7 @@ jobs:
           commit-message: 'Update logs'
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
           target-branch: $PUSH_BRANCH
+          create-target-branch-if-needed: true
 
       - uses: actions/upload-artifact@v3
         if: ${{ always() }}
