@@ -119,5 +119,5 @@ jobs:
     with:
       uhdm_tests_branch: ${{github.event.inputs.uhdm_tests_branch}}
       plugins_branch: ${{github.event.inputs.plugins_branch}}
-      pull_request_number: ${{ github.event.issue.number }}
+      pull_request_number: ${{ github.event.number }}
     needs: build-binaries
