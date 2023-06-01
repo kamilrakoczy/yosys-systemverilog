@@ -13,6 +13,11 @@ on:
         required: false
         type: 'string'
         default: ''
+      pull_request_number:
+        description: 'pull request number to comment'
+        required: false
+        type: 'string'
+        default: ''
 
 env:
   GHA_CUSTOM_LINE_PREFIX: "▌"
@@ -247,10 +252,10 @@ jobs:
           target-branch: ${{ env.PUSH_BRANCH }}
           create-target-branch-if-needed: true
       - name: Post comment
-        if: ${{ github.event.workflow_run.event == 'pull_request' }}
+        if: github.event.inputs.pull_request_number != ''
         uses: KeisukeYamashita/create-comment@v1
         with:
-          number: ${{ github.event.issue.number }}
+          number: ${{ github.event.inputs.pull_request_number }}
           check-only-first-line: "true"
           unique: "true"
           token: ${{ secrets.GITHUB_TOKEN }}
