@@ -216,6 +216,7 @@ jobs:
   push-logs:
     name: Generate AST diff
     runs-on: ubuntu-latest
+    permissions: write-all
     needs:
       - tests-read-systemverilog
     steps:
