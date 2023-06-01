@@ -247,7 +247,7 @@ jobs:
           target-branch: ${{ env.PUSH_BRANCH }}
           create-target-branch-if-needed: true
       - name: Post comment
-        if: ${{ github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success' }}
+        if: ${{ github.event.workflow_run.event == 'pull_request' }}
         uses: KeisukeYamashita/create-comment@v1
         with:
           number: ${{ github.event.issue.number }}
