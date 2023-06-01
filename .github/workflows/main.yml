@@ -118,4 +118,5 @@ jobs:
     secrets: inherit
     with:
       uhdm_tests_branch: ${{github.event.inputs.uhdm_tests_branch}}
+      plugins_branch: ${{github.event.inputs.plugins_branch}}
     needs: build-binaries
