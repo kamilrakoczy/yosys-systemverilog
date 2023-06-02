@@ -13,11 +13,12 @@ on:
         required: false
         type: 'string'
         default: ''
-      pull_request:
-        description: 'pull request number to comment'
-        required: false
+    secrets:
+      SSH_DEPLOY_KEY:
+        description: 'SSH key used to push logs'
+        required: true
         type: 'string'
-        default: ''
+
 
 env:
   GHA_CUSTOM_LINE_PREFIX: "▌"
@@ -216,7 +217,6 @@ jobs:
   push-logs:
     name: Generate AST diff
     runs-on: ubuntu-latest
-    permissions: write-all
     needs:
       - tests-read-systemverilog
     steps:
@@ -237,7 +237,7 @@ jobs:
           fi
           echo "PUSH_BRANCH=$PUSH_BRANCH" >> "$GITHUB_ENV"
           PUSH_LOGS=false
-          # currently pushing logs when submodules are overriten using http/s is not supported
+          # currently pushing logs when submodules are overriten using url is not supported
           if [[ ! "$PLUGINS_BRANCH_SPEC" =~ "https://" && ! "$UHDM_TESTS_BRANCH_SPEC" =~ "https://" ]]; then
             PUSH_LOGS=true
           fi
@@ -246,15 +246,6 @@ jobs:
           PLUGINS_BRANCH_SPEC: ${{github.event.inputs.plugins_branch}}
           UHDM_TESTS_BRANCH_SPEC: ${{github.event.inputs.uhdm_tests_branch}}
 
-      - name: Debug test
-        run: |
-          echo "push_logs: ${{ env.PUSH_LOGS }}"
-          echo "github.event.number: ${{ github.event.number }}"
-          echo "github.event_name: ${{ github.event_name }}"
-          echo "github.event_path: ${{ github.event_path }}"
-          cat ${{ github.event_path }}
-          echo "env":
-          cat ${{ github.env }}
       - name: Push logs
         uses: cpina/github-action-push-to-another-repository@main
         if: ${{ env.PUSH_LOGS == 'true' }}
@@ -262,12 +253,13 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source-directory: 'logs'
-          destination-github-username: 'kamilrakoczy'
+          destination-github-username: ${{ github.repository_owner }}
           destination-repository-name: 'yosys-systemverilog-logs'
           commit-message: 'Update logs'
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
           target-branch: ${{ env.PUSH_BRANCH }}
           create-target-branch-if-needed: true
+
       - name: Post comment
         if: ${{ github.event_name == 'pull_request' }}
         uses: KeisukeYamashita/create-comment@v1
@@ -275,10 +267,11 @@ jobs:
           check-only-first-line: "true"
           unique: "true"
           token: ${{ secrets.GITHUB_TOKEN }}
-          comment: https://github.com/kamilrakoczy/yosys-systemverilog-logs/compare/${{ env.PUSH_BRANCH }}
+          comment: https://github.com/${{ github.repository }}-logs/compare/${{ env.PUSH_BRANCH }}
+
       - name: Create summary
         run:
-          echo "https://github.com/kamilrakoczy/yosys-systemverilog-logs/compare/${{ env.PUSH_BRANCH }}" >> $GITHUB_STEP_SUMMARY
+          echo "https://github.com/${{ github.repository }}-logs/compare/${{ env.PUSH_BRANCH }}" >> $GITHUB_STEP_SUMMARY
 
   generate-tests-summary:
     name: Summary Generation

@@ -115,9 +115,11 @@ jobs:
   tests-parsing:
     name: Parsing Tests
     uses: ./.github/workflows/parsing-tests.yml
-    secrets: inherit
+    secrets:
+      SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+    permissions:
+      pull-requests: write
     with:
       uhdm_tests_branch: ${{github.event.inputs.uhdm_tests_branch}}
       plugins_branch: ${{github.event.inputs.plugins_branch}}
-      pull_request: ${{ github.event_name == 'pull_request' }}
     needs: build-binaries
