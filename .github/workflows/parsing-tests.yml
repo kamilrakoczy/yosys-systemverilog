@@ -217,7 +217,6 @@ jobs:
     name: Generate AST diff
     runs-on: ubuntu-latest
     permissions: write-all
-    if: ${{github.event.inputs.plugins_branch}} != 'https?://'* && ${{github.event.inputs.uhdm_tests_branch}} != 'https?://'*
     needs:
       - tests-read-systemverilog
     steps:
@@ -237,12 +236,19 @@ jobs:
             PUSH_BRANCH="$PUSH_BRANCH+tests+$UHDM_TESTS_BRANCH_SPEC"
           fi
           echo "PUSH_BRANCH=$PUSH_BRANCH" >> "$GITHUB_ENV"
+          PUSH_LOGS=false
+          # currently pushing logs when submodules are overriten using http/s is not supported
+          if [[ ${{github.event.inputs.plugins_branch}} != 'https?://'* && ${{github.event.inputs.uhdm_tests_branch}} != 'https?://'* ]]; then
+            PUSH_LOGS=true
+          fi
+          echo "PUSH_LOGS=$PUSH_LOGS" >> "$GITHUB_ENV"
         env:
           PLUGINS_BRANCH_SPEC: ${{github.event.inputs.plugins_branch}}
           UHDM_TESTS_BRANCH_SPEC: ${{github.event.inputs.uhdm_tests_branch}}
 
       - name: Push logs
         uses: cpina/github-action-push-to-another-repository@main
+        if: ${{ env.PUSH_LOGS == 'true' }}
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
@@ -255,6 +261,7 @@ jobs:
           create-target-branch-if-needed: true
       - name: Debug test
         run: |
+          echo "push_logs: ${{ env.PUSH_LOGS }}"
           echo "github.event.number: ${{ github.event.number }}"
           echo "github.event_name: ${{ github.event_name }}"
           echo "github.event_path: ${{ github.event_path }}"
