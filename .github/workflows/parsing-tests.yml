@@ -246,6 +246,15 @@ jobs:
           PLUGINS_BRANCH_SPEC: ${{github.event.inputs.plugins_branch}}
           UHDM_TESTS_BRANCH_SPEC: ${{github.event.inputs.uhdm_tests_branch}}
 
+      - name: Debug test
+        run: |
+          echo "push_logs: ${{ env.PUSH_LOGS }}"
+          echo "github.event.number: ${{ github.event.number }}"
+          echo "github.event_name: ${{ github.event_name }}"
+          echo "github.event_path: ${{ github.event_path }}"
+          cat ${{ github.event_path }}
+          echo "env":
+          cat ${{ github.env }}
       - name: Push logs
         uses: cpina/github-action-push-to-another-repository@main
         if: ${{ env.PUSH_LOGS == 'true' }}
@@ -259,15 +268,6 @@ jobs:
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
           target-branch: ${{ env.PUSH_BRANCH }}
           create-target-branch-if-needed: true
-      - name: Debug test
-        run: |
-          echo "push_logs: ${{ env.PUSH_LOGS }}"
-          echo "github.event.number: ${{ github.event.number }}"
-          echo "github.event_name: ${{ github.event_name }}"
-          echo "github.event_path: ${{ github.event_path }}"
-          cat ${{ github.event_path }}
-          echo "env":
-          cat ${{ github.env }}
       - name: Post comment
         if: ${{ github.event_name == 'pull_request' }}
         uses: KeisukeYamashita/create-comment@v1
