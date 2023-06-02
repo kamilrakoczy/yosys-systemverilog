@@ -217,6 +217,7 @@ jobs:
     name: Generate AST diff
     runs-on: ubuntu-latest
     permissions: write-all
+    if: ${{github.event.inputs.plugins_branch}} != "https?://"* && ${{github.event.inputs.uhdm_tests_branch}} != "https?://"*
     needs:
       - tests-read-systemverilog
     steps:
