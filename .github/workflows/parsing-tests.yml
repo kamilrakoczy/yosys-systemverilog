@@ -17,7 +17,6 @@ on:
       SSH_DEPLOY_KEY:
         description: 'SSH key used to push logs'
         required: true
-        type: 'string'
 
 
 env:
