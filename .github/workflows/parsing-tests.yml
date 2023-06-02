@@ -238,7 +238,7 @@ jobs:
           echo "PUSH_BRANCH=$PUSH_BRANCH" >> "$GITHUB_ENV"
           PUSH_LOGS=false
           # currently pushing logs when submodules are overriten using http/s is not supported
-          if [[ ${{github.event.inputs.plugins_branch}} != 'https?://'* && ${{github.event.inputs.uhdm_tests_branch}} != 'https?://'* ]]; then
+          if [[ $PLUGINS_BRANCH_SPEC != 'https?://'* && $UHDM_TESTS_BRANCH_SPEC != 'https?://'* ]]; then
             PUSH_LOGS=true
           fi
           echo "PUSH_LOGS=$PUSH_LOGS" >> "$GITHUB_ENV"
