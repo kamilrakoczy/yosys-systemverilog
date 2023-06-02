@@ -252,6 +252,14 @@ jobs:
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
           target-branch: ${{ env.PUSH_BRANCH }}
           create-target-branch-if-needed: true
+      - name: Debug test
+        run: |
+          echo "github.event.number: ${{ github.event.number }}"
+          echo "github.event_name: ${{ github.event_name }}"
+          echo "github.event_path: ${{ github.event_path }}"
+          cat ${{ github.event_path }}
+          echo "env":
+          cat ${{ github.env }}
       - name: Post comment
         if: ${{ github.event.workflow_call.event == 'pull_request' }}
         uses: KeisukeYamashita/create-comment@v1
